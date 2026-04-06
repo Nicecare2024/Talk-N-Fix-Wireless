@@ -1,40 +1,32 @@
-import { Icons } from "@/components/Icons";
-
 const STEPS = [
-  { num: "01", Icon: Icons.MapPin, title: "Walk In", desc: "No appointment needed. Just show up at any of our 5 locations. We're open 7 days a week." },
-  { num: "02", Icon: Icons.Search, title: "Free Diagnostic", desc: "Our certified technicians inspect your device and give you an honest quote in minutes — no charge." },
-  { num: "03", Icon: Icons.Check, title: "Pick It Up Fixed", desc: "Most repairs done in 30–45 minutes while you wait. Protected by our 1-year warranty." },
+  { num: "1", title: "Book Online", desc: "Select your device and issue. Get an instant preliminary quote and walk in at your convenience." },
+  { num: "2", title: "Drop Off", desc: "Visit any of our 5 NJ locations. Our team will check your device in within 5 minutes." },
+  { num: "3", title: "Expert Repair", desc: "Certified technicians perform the repair using OEM-grade parts in our clean workspace." },
+  { num: "4", title: "Quality Check", desc: "Every device undergoes a 20-point functionality test before handoff with your new warranty." },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 bg-[#0a0a0a]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4">
-            The Process
-          </span>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight" style={{ fontFamily: "Space Grotesk" }}>
-            Fixed in <span className="text-gradient">3 Simple Steps</span>
+    <section className="py-24 bg-zinc-900 text-white px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <p className="text-red-500 font-bold tracking-[0.2em] text-sm mb-3 uppercase">The Process</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold" style={{ fontFamily: "Plus Jakarta Sans" }}>
+            Fixed in 4 Simple Steps
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 rounded-3xl overflow-hidden border border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+          {/* connecting line */}
+          <div className="hidden md:block absolute top-8 left-0 w-full h-px bg-white/10" />
+
           {STEPS.map((step, i) => (
-            <div key={i} className="bg-[#131313] p-12 text-center relative group hover:bg-[#1a1a1a] transition-colors">
-              <div className="text-7xl font-black text-blue-600/10 mb-6 leading-none" style={{ fontFamily: "Space Grotesk" }}>
+            <div key={i} className="relative z-10 group">
+              <div className="w-16 h-16 rounded-full bg-red-700 text-white flex items-center justify-center font-black text-xl mb-8 border-4 border-zinc-900 shadow-lg group-hover:scale-110 transition-transform" style={{ fontFamily: "Plus Jakarta Sans" }}>
                 {step.num}
               </div>
-              <div className="w-14 h-14 rounded-2xl bg-blue-600/10 flex items-center justify-center text-blue-400 mx-auto mb-5">
-                <step.Icon />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: "Space Grotesk" }}>{step.title}</h3>
-              <p className="text-zinc-500 leading-relaxed text-sm">{step.desc}</p>
-              {i < 2 && (
-                <div className="hidden md:flex absolute top-1/2 -right-3 text-blue-500 z-10 items-center justify-center">
-                  <Icons.ArrowRight />
-                </div>
-              )}
+              <h4 className="text-xl font-bold mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>{step.title}</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>

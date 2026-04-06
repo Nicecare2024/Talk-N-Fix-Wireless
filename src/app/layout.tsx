@@ -49,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Floating call button — mobile only */}
         <a
           href="tel:9737785900"
-          className="fixed bottom-24 right-6 z-40 md:hidden bg-emerald-500 w-12 h-12 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:brightness-110 transition-all text-white"
+          className="fixed bottom-24 right-6 z-40 md:hidden bg-emerald-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:brightness-110 transition-all text-white"
           aria-label="Call Now"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">

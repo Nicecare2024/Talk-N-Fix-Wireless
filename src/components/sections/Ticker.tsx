@@ -8,12 +8,12 @@ const items = [
 export default function Ticker() {
   const doubled = [...items, ...items];
   return (
-    <div className="overflow-hidden border-y border-white/5 bg-[#111] py-4">
+    <div className="overflow-hidden border-y border-zinc-100 bg-white py-3">
       <div className="ticker-track flex gap-10 whitespace-nowrap w-max">
         {doubled.map((item, i) => (
-          <span key={i} className="flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-zinc-400">
+          <span key={i} className="flex items-center gap-10 text-xs font-bold uppercase tracking-widest text-zinc-400">
             {item}
-            <span className="w-1 h-1 rounded-full bg-blue-500 inline-block" />
+            <span className="w-1 h-1 rounded-full bg-red-600 inline-block" />
           </span>
         ))}
       </div>

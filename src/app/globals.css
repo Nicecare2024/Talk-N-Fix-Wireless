@@ -1,48 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --surface: #131313;
-  --surface-low: #1c1b1b;
-  --surface-high: #2a2a2a;
-  --primary: #2563eb;
-  --secondary: #06b6d4;
-  --on-surface: #e5e2e1;
-  --on-surface-muted: #a1a1aa;
+  --primary: #bc0100;
+  --primary-container: #eb0000;
+  --surface: #f9f9f9;
+  --surface-low: #f3f3f3;
+  --surface-high: #e8e8e8;
+  --surface-lowest: #ffffff;
+  --on-surface: #1a1c1c;
+  --on-surface-variant: #603e39;
+  --secondary: #0050d7;
+  --outline-variant: #ebbbb4;
+  --primary-fixed: #ffdad4;
+  --secondary-fixed: #dbe1ff;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
+  background: var(--surface);
   color: var(--on-surface);
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-h1,h2,h3,h4,h5 { font-family: 'Space Grotesk', sans-serif; }
-
-.text-gradient {
-  background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+h1, h2, h3, h4, h5 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.bg-gradient-primary { background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%); }
-
-.glass {
-  background: rgba(10,10,10,0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+.bg-primary-gradient {
+  background: linear-gradient(135deg, #bc0100 0%, #eb0000 100%);
 }
 
-.card-glow { transition: box-shadow 0.3s ease, transform 0.3s ease; }
-.card-glow:hover {
-  box-shadow: 0 0 40px rgba(37,99,235,0.18);
-  transform: translateY(-4px);
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.shadow-nav {
+  box-shadow: 0px 12px 32px rgba(26, 28, 28, 0.06);
+}
+
+.shadow-card {
+  box-shadow: 0px 12px 32px rgba(26, 28, 28, 0.06);
+}
+
+.shadow-primary {
+  box-shadow: 0px 12px 32px rgba(188, 1, 0, 0.2);
 }
 
 @keyframes ticker {
@@ -53,10 +60,18 @@ h1,h2,h3,h4,h5 { font-family: 'Space Grotesk', sans-serif; }
 .ticker-track:hover { animation-play-state: paused; }
 
 @keyframes float {
-  0%,100% { transform: translateY(0px) rotate(2deg); }
-  50% { transform: translateY(-14px) rotate(2deg); }
+  0%, 100% { transform: translateY(0px) rotate(2deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
 }
 .float-anim { animation: float 4s ease-in-out infinite; }
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.card-hover {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card-hover:hover {
+  box-shadow: 0px 24px 48px rgba(26, 28, 28, 0.1);
+  transform: translateY(-2px);
+}

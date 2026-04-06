@@ -1,39 +1,35 @@
 import Link from "next/link";
-import { Icons } from "@/components/Icons";
 
 const FEATURES = [
-  { Icon: Icons.Shield, title: "1-Year Warranty", desc: "Every repair is backed by a full year warranty for complete peace of mind." },
-  { Icon: Icons.Diamond, title: "High-Quality Parts", desc: "OEM-grade and premium aftermarket parts selected for performance and durability." },
-  { Icon: Icons.Wrench, title: "Trained Technicians", desc: "All repairs performed in-store by certified, experienced technicians." },
-  { Icon: Icons.Lock, title: "Data Privacy", desc: "Your personal data stays private and secure throughout every repair." },
-  { Icon: Icons.Zap, title: "Same-Day Service", desc: "Most repairs completed in 30–45 minutes while you wait in-store." },
-  { Icon: Icons.Globe, title: "Bilingual Support", desc: "We proudly serve our Spanish-speaking community with bilingual staff." },
+  { title: "OEM Quality Parts", desc: "We only use certified original or high-spec equivalent components for every repair." },
+  { title: "Same-Day Service", desc: "90% of screen repairs are completed within 45 minutes while you wait in-store." },
+  { title: "1-Year Warranty", desc: "Every repair is backed by our comprehensive 1-year hardware guarantee." },
+  { title: "Data Privacy", desc: "Your personal data stays private and secure throughout every repair." },
+  { title: "Free Diagnostic", desc: "We inspect your device and give you an honest quote — no charge, no obligation." },
+  { title: "Bilingual Support", desc: "We proudly serve our Spanish-speaking community with bilingual staff." },
 ];
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-24 bg-[#0f0f0f]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="why-us" className="py-24 bg-white px-6">
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-600/10 border border-blue-600/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
-              Why Choose Us
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight" style={{ fontFamily: "Space Grotesk" }}>
-              We Don&apos;t Just Fix Phones.<br />
-              <span className="text-gradient">We Fix Your Day.</span>
+            <p className="text-red-700 font-bold tracking-[0.2em] text-sm mb-4 uppercase">Why Choose Us</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-zinc-900 mb-6 leading-tight" style={{ fontFamily: "Plus Jakarta Sans" }}>
+              We Don&apos;t Just Fix Phones.<br />We Fix Your Day.
             </h2>
-            <p className="text-zinc-500 leading-relaxed mb-4">
+            <p className="text-[#603e39] leading-relaxed mb-4">
               Every repair is handled with care, precision, and transparency. No hidden fees. No runaround. Just results.
             </p>
-            <p className="text-zinc-500 leading-relaxed mb-8">
-              Founded in 2014 by Rey — who built this business from nothing — Talk N Fix Wireless has repaired over 1,000 devices every month and earned 6,500+ Google reviews.
+            <p className="text-[#603e39] leading-relaxed mb-8">
+              Founded in 2014 by Rey — who built this business from nothing — Talk N Fix Wireless repairs over 1,000 devices every month and has earned 6,500+ Google reviews.
             </p>
             <div className="flex gap-4">
-              <Link href="/locations" className="bg-gradient-primary px-6 py-3 rounded-xl text-white font-bold hover:brightness-110 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] text-sm inline-flex items-center gap-2">
-                Find a Location <Icons.ArrowRight />
+              <Link href="/locations" className="bg-primary-gradient text-white font-bold px-6 py-3 rounded-xl text-sm hover:brightness-110 transition-all shadow-primary">
+                Find a Location
               </Link>
-              <Link href="/about" className="px-6 py-3 rounded-xl border border-white/10 text-white font-bold hover:bg-white/5 transition-all text-sm">
+              <Link href="/about" className="px-6 py-3 rounded-xl border border-zinc-200 text-zinc-700 font-bold text-sm hover:bg-zinc-50 transition-all">
                 Our Story
               </Link>
             </div>
@@ -41,12 +37,12 @@ export default function WhyUs() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {FEATURES.map((f) => (
-              <div key={f.title} className="bg-[#1a1a1a] rounded-2xl p-6 border border-white/5 hover:border-blue-600/20 transition-all group">
-                <div className="w-10 h-10 rounded-xl bg-blue-600/10 flex items-center justify-center text-blue-400 mb-3">
-                  <f.Icon />
+              <div key={f.title} className="bg-[#f3f3f3] rounded-2xl p-6 hover:bg-[#ffdad4]/30 transition-colors group">
+                <div className="w-8 h-8 rounded-lg bg-red-700/10 flex items-center justify-center mb-3">
+                  <svg className="w-4 h-4 text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
                 </div>
-                <h4 className="text-white font-bold mb-2 text-sm" style={{ fontFamily: "Space Grotesk" }}>{f.title}</h4>
-                <p className="text-zinc-500 text-xs leading-relaxed">{f.desc}</p>
+                <h4 className="text-zinc-900 font-bold mb-1.5 text-sm" style={{ fontFamily: "Plus Jakarta Sans" }}>{f.title}</h4>
+                <p className="text-[#603e39] text-xs leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

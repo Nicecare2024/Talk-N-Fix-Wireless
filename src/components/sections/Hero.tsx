@@ -1,13 +1,12 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Icons } from "@/components/Icons";
 
 const STATS = [
-  { value: 10000, suffix: "+", label: "Devices Fixed" },
+  { value: 6500, suffix: "+", label: "Google Reviews" },
   { value: 5, suffix: "", label: "Locations" },
   { value: 30, suffix: "min", label: "Avg Repair" },
-  { value: 1, suffix: "yr", label: "Warranty" },
+  { value: 1000, suffix: "+", label: "Repairs / Month" },
 ];
 
 function useCountUp(target: number, duration = 1800) {
@@ -36,96 +35,84 @@ function useCountUp(target: number, duration = 1800) {
 function StatItem({ value, suffix, label }: { value: number; suffix: string; label: string }) {
   const ref = useCountUp(value);
   return (
-    <div className="text-center md:text-left">
-      <div className="flex items-baseline gap-0.5 justify-center md:justify-start">
-        <span ref={ref} className="text-3xl font-black text-white" style={{ fontFamily: "Space Grotesk" }}>0</span>
-        <span className="text-xl font-bold text-blue-400">{suffix}</span>
+    <div>
+      <div className="flex items-baseline gap-0.5">
+        <span ref={ref} className="text-2xl font-black text-zinc-900" style={{ fontFamily: "Plus Jakarta Sans" }}>0</span>
+        <span className="text-lg font-bold text-red-700">{suffix}</span>
       </div>
-      <p className="text-xs text-zinc-500 uppercase tracking-widest font-semibold mt-1">{label}</p>
+      <p className="text-xs text-zinc-500 uppercase tracking-widest font-semibold mt-0.5">{label}</p>
     </div>
   );
 }
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px]" />
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-          backgroundSize: "60px 60px"
-        }} />
-      </div>
+    <section className="relative min-h-[870px] flex items-center overflow-hidden px-6 pt-20 bg-[#f9f9f9]">
+      {/* Subtle bg orb */}
+      <div className="absolute -top-20 -right-20 w-96 h-96 bg-red-600/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-20">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16">
         {/* Left */}
-        <div className="space-y-8 z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 pulse-dot" />
-            Open Now · Walk-ins Welcome · 5 Locations
-          </div>
-
-          <h1 className="text-6xl md:text-7xl xl:text-8xl font-black leading-[0.9] tracking-tighter" style={{ fontFamily: "Space Grotesk" }}>
-            Your Device.<br />
-            Fixed Fast.<br />
-            <span className="text-gradient">Guaranteed.</span>
+        <div className="z-10">
+          <span className="inline-block py-1 px-3 rounded-full bg-[#dbe1ff] text-[#00174b] text-[0.75rem] font-bold tracking-widest mb-6 uppercase">
+            Premium Mobile Care
+          </span>
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-zinc-900 leading-[1.05] mb-6" style={{ fontFamily: "Plus Jakarta Sans" }}>
+            Expert Mobile<br />Repairs in{" "}
+            <span className="text-red-700">30–45 Minutes</span>
           </h1>
-
-          <p className="text-zinc-400 text-lg leading-relaxed max-w-lg">
-            Same-day repairs in 30–45 minutes. Premium OEM-grade parts. 1-year warranty.
-            5 locations across Newark & Passaic, NJ.
+          <p className="text-lg text-[#603e39] max-w-xl mb-10 leading-relaxed">
+            Precision engineering meets rapid service. Our certified technicians use laboratory-grade components to restore your device to factory perfection while you wait.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/book" className="bg-gradient-primary px-8 py-4 rounded-xl text-white font-bold text-lg hover:brightness-110 transition-all shadow-[0_0_30px_rgba(37,99,235,0.35)] text-center flex items-center justify-center gap-2">
-              Get a Free Quote <Icons.ArrowRight />
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <Link href="/book" className="bg-primary-gradient text-white font-bold px-8 py-4 rounded-xl text-lg shadow-xl hover:brightness-110 transition-all active:scale-95 text-center">
+              Get Instant Quote
             </Link>
-            <Link href="/locations" className="px-8 py-4 rounded-xl border border-white/15 text-white font-bold text-lg hover:bg-white/5 transition-all text-center">
-              Find a Location
+            <Link href="/locations" className="bg-white text-zinc-900 font-semibold px-8 py-4 rounded-xl text-lg border border-[#ebbbb4]/30 flex items-center justify-center gap-2 hover:bg-zinc-50 transition-all">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Find a Store
             </Link>
           </div>
 
-          <div className="pt-6 border-t border-white/5 grid grid-cols-2 sm:grid-cols-4 gap-6">
-            {STATS.map(s => <StatItem key={s.label} {...s} />)}
+          {/* Social proof */}
+          <div className="flex items-center gap-5">
+            <div className="flex -space-x-2">
+              {["bg-zinc-300", "bg-zinc-400", "bg-zinc-500"].map((c, i) => (
+                <div key={i} className={`w-9 h-9 rounded-full border-2 border-white ${c}`} />
+              ))}
+            </div>
+            <div>
+              <div className="flex text-red-600 text-sm">{"★★★★★"}</div>
+              <p className="text-zinc-500 text-sm">6,500+ repairs completed</p>
+            </div>
           </div>
         </div>
 
-        {/* Right — Phone mockup */}
-        <div className="relative flex justify-center items-center z-10">
-          <div className="absolute w-80 h-80 bg-blue-600/20 rounded-full blur-[80px]" />
-          <div className="float-anim relative">
-            <div className="relative w-64 h-[520px] rounded-[3rem] border-[10px] border-zinc-800 bg-zinc-900 shadow-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 flex flex-col items-center justify-center gap-4 p-6">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center text-white shadow-[0_0_30px_rgba(37,99,235,0.5)]">
-                  <Icons.Wrench />
-                </div>
-                <div className="text-center">
-                  <p className="text-white font-bold text-lg" style={{ fontFamily: "Space Grotesk" }}>Repair Complete</p>
-                  <p className="text-zinc-400 text-sm mt-1">30 minutes · 1-yr warranty</p>
-                </div>
-                <div className="w-12 h-12 rounded-full bg-emerald-500/20 border-2 border-emerald-500 flex items-center justify-center text-emerald-400">
-                  <Icons.Check />
-                </div>
-                <div className="w-full mt-4 space-y-2">
-                  {["Screen Restored", "Touch Calibrated", "Data Safe"].map(item => (
-                    <div key={item} className="flex items-center gap-2 text-xs text-zinc-400">
-                      <span className="text-emerald-400"><Icons.Check /></span> {item}
-                    </div>
-                  ))}
-                </div>
+        {/* Right — image with glass card */}
+        <div className="relative hidden lg:block">
+          <div className="absolute -top-10 -right-10 w-72 h-72 bg-red-600/5 rounded-full blur-3xl" />
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl float-anim">
+            {/* Placeholder image — replace with real photo */}
+            <div className="w-full h-[480px] bg-gradient-to-br from-zinc-200 to-zinc-300 flex items-center justify-center">
+              <div className="text-center text-zinc-500">
+                <svg className="w-20 h-20 mx-auto mb-4 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="5" y="2" width="14" height="20" rx="2" strokeWidth={1}/><line x1="12" y1="18" x2="12.01" y2="18" strokeWidth={2}/></svg>
+                <p className="text-sm font-medium opacity-50">Add repair shop photo here</p>
               </div>
-              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-5 bg-zinc-900 rounded-full" />
             </div>
-            <div className="absolute inset-0 rounded-[3rem] shadow-[0_0_60px_rgba(37,99,235,0.3)] pointer-events-none" />
+            {/* Glass overlay card */}
+            <div className="absolute bottom-6 left-6 right-6 p-5 bg-white/80 backdrop-blur-xl rounded-2xl border border-white/50 shadow-lg">
+              <p className="text-zinc-900 font-bold mb-1" style={{ fontFamily: "Plus Jakarta Sans" }}>Precision Guaranteed</p>
+              <p className="text-zinc-600 text-sm">We use genuine parts and advanced micro-soldering tools for all flagship models.</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-600 text-xs">
-        <div className="w-px h-8 bg-gradient-to-b from-transparent to-zinc-600" />
-        <span>Scroll</span>
+      {/* Stats bar */}
+      <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-zinc-100 py-6 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+          {STATS.map(s => <StatItem key={s.label} {...s} />)}
+        </div>
       </div>
     </section>
   );

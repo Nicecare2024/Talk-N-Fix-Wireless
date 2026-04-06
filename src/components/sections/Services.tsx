@@ -1,58 +1,63 @@
 import Link from "next/link";
 import { SERVICES } from "@/lib/data";
-import { SERVICE_ICONS, Icons } from "@/components/Icons";
+
+const PRICING: Record<string, string> = {
+  "iphone-screen-repair": "FROM $79",
+  "samsung-screen-repair": "FROM $89",
+  "ipad-screen-repair": "FROM $119",
+  "battery-replacement": "FROM $49",
+  "charging-port-repair": "FROM $59",
+  "back-glass-repair": "FROM $79",
+  "game-console-hdmi-repair": "FROM $89",
+  "water-damage-repair": "ESTIMATE",
+  "diagnostic-no-power": "FREE",
+  "laptop-repair": "FROM $99",
+  "computer-repair": "FROM $59",
+};
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-[#0f0f0f]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-blue-600/10 border border-blue-600/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-4">
-            What We Fix
-          </span>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4" style={{ fontFamily: "Space Grotesk" }}>
-            Most Common <span className="text-gradient">Repairs</span>
-          </h2>
-          <p className="text-zinc-500 max-w-xl mx-auto">
-            Fast, reliable repairs with same-day service & warranty. Serving Newark, Passaic & nearby cities.
+    <section id="services" className="py-24 bg-[#f3f3f3] px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div>
+            <p className="text-red-700 font-bold tracking-[0.2em] text-sm mb-3 uppercase">Our Specialties</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-zinc-900" style={{ fontFamily: "Plus Jakarta Sans" }}>
+              Most Common Repairs
+            </h2>
+          </div>
+          <p className="text-[#603e39] max-w-md text-sm leading-relaxed">
+            Transparent pricing and instant diagnostics for the world&apos;s most popular devices.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICES.map((service) => {
-            const Icon = SERVICE_ICONS[service.id] ?? Icons.Wrench;
-            return (
-              <Link key={service.id} href={`/services/${service.id}`}
-                className="group relative bg-[#1a1a1a] rounded-2xl p-7 border border-white/5 card-glow block">
-                {service.popular && (
-                  <span className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-blue-600/20 border border-blue-600/30 text-blue-400 text-xs font-bold">
-                    Popular
-                  </span>
-                )}
-                <div className="w-12 h-12 rounded-xl bg-blue-600/10 flex items-center justify-center text-blue-400 mb-5">
-                  <Icon />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {SERVICES.map((service) => (
+            <Link key={service.id} href={`/services/${service.id}`}
+              className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 block card-hover">
+              <div className="flex justify-between items-start mb-10">
+                <div className="w-14 h-14 bg-zinc-100 rounded-2xl flex items-center justify-center text-zinc-700 group-hover:bg-red-700 group-hover:text-white transition-colors duration-300">
+                  <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" />
+                    <line x1="12" y1="18" x2="12.01" y2="18" />
+                  </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors" style={{ fontFamily: "Space Grotesk" }}>
-                  {service.title}
-                </h3>
-                <p className="text-zinc-500 text-sm leading-relaxed mb-5">{service.description}</p>
-                {service.sameDay && (
-                  <div className="flex items-center gap-2 text-xs font-semibold text-cyan-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                    {service.time} · Same Day
-                  </div>
-                )}
-                <div className="mt-4 text-xs text-blue-400 font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                  Book Now <Icons.ArrowRight />
-                </div>
-              </Link>
-            );
-          })}
+                <span className="text-[#603e39] text-xs tracking-widest font-bold">{PRICING[service.id] ?? "CALL"}</span>
+              </div>
+              <h3 className="text-xl font-bold text-zinc-900 mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>{service.title}</h3>
+              <p className="text-[#603e39] text-sm leading-relaxed mb-6">{service.description}</p>
+              <div className="flex items-center gap-2 text-red-700 font-bold text-sm group-hover:translate-x-1 transition-transform">
+                View Details
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </Link>
+          ))}
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/services" className="inline-flex items-center gap-2 px-8 py-3 rounded-xl border border-white/10 text-white font-semibold hover:bg-white/5 transition-all text-sm">
-            View All Services <Icons.ArrowRight />
+          <Link href="/services" className="inline-flex items-center gap-2 text-red-700 font-bold border-b-2 border-red-700 pb-0.5 hover:text-red-800 transition-colors">
+            View All Services
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
           </Link>
         </div>
       </div>
