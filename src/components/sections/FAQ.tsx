@@ -17,16 +17,16 @@ export default function FAQ() {
 
         <div className="space-y-3">
           {FAQS.map((faq, i) => (
-            <div key={i} className="bg-[#f3f3f3] rounded-2xl overflow-hidden">
+            <div key={i} className="bg-zinc-100 rounded-2xl overflow-hidden">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-[#eeeeee] transition-colors"
+                className="w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-zinc-200 transition-colors"
               >
                 <span className="text-zinc-900 font-semibold text-sm" style={{ fontFamily: "Plus Jakarta Sans" }}>{faq.q}</span>
                 <span className={`text-red-700 text-xl flex-shrink-0 font-bold transition-transform duration-300 ${open === i ? "rotate-45" : ""}`}>+</span>
               </button>
               {open === i && (
-                <div className="px-6 pb-5 text-[#603e39] text-sm leading-relaxed border-t border-zinc-200 pt-4">
+                <div className="px-6 pb-5 text-stone-600 text-sm leading-relaxed border-t border-zinc-200 pt-4">
                   {faq.a}
                 </div>
               )}

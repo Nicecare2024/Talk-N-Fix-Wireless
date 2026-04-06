@@ -17,7 +17,7 @@ const PRICING: Record<string, string> = {
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-[#f3f3f3] px-6">
+    <section id="services" className="py-24 bg-zinc-100 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div>
@@ -26,7 +26,7 @@ export default function Services() {
               Most Common Repairs
             </h2>
           </div>
-          <p className="text-[#603e39] max-w-md text-sm leading-relaxed">
+          <p className="text-stone-600 max-w-md text-sm leading-relaxed">
             Transparent pricing and instant diagnostics for the world&apos;s most popular devices.
           </p>
         </div>
@@ -42,10 +42,10 @@ export default function Services() {
                     <line x1="12" y1="18" x2="12.01" y2="18" />
                   </svg>
                 </div>
-                <span className="text-[#603e39] text-xs tracking-widest font-bold">{PRICING[service.id] ?? "CALL"}</span>
+                <span className="text-stone-600 text-xs tracking-widest font-bold">{PRICING[service.id] ?? "CALL"}</span>
               </div>
               <h3 className="text-xl font-bold text-zinc-900 mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>{service.title}</h3>
-              <p className="text-[#603e39] text-sm leading-relaxed mb-6">{service.description}</p>
+              <p className="text-stone-600 text-sm leading-relaxed mb-6">{service.description}</p>
               <div className="flex items-center gap-2 text-red-700 font-bold text-sm group-hover:translate-x-1 transition-transform">
                 View Details
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>

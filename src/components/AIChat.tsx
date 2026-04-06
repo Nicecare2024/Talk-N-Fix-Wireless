@@ -73,7 +73,7 @@ export default function AIChat() {
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 no-scrollbar bg-[#f9f9f9]" style={{ minHeight: 0 }}>
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 no-scrollbar bg-stone-50" style={{ minHeight: 0 }}>
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
@@ -103,7 +103,7 @@ export default function AIChat() {
               onChange={e => setInput(e.target.value)}
               onKeyDown={e => e.key === "Enter" && send()}
               placeholder="Describe your issue..."
-              className="flex-1 bg-[#f3f3f3] border-none rounded-xl px-4 py-2.5 text-zinc-900 text-sm placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-700/20 transition-all"
+              className="flex-1 bg-zinc-100 border-none rounded-xl px-4 py-2.5 text-zinc-900 text-sm placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-700/20 transition-all"
             />
             <button onClick={send} disabled={loading || !input.trim()}
               className="bg-primary-gradient px-4 py-2.5 rounded-xl text-white font-bold text-sm hover:brightness-110 transition-all disabled:opacity-40">

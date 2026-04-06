@@ -19,7 +19,7 @@ export default function LocationsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20 bg-[#f9f9f9]">
+      <main className="pt-20 bg-stone-50">
 
         {/* Hero */}
         <section className="max-w-7xl mx-auto px-6 py-16">
@@ -31,7 +31,7 @@ export default function LocationsPage() {
                 <h1 className="text-5xl font-extrabold tracking-tight text-zinc-900 mt-3 mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>
                   Find Your Store
                 </h1>
-                <p className="text-[#603e39] text-lg">5 locations across Newark & Passaic NJ. Walk-ins always welcome — no appointment needed.</p>
+                <p className="text-stone-600 text-lg">5 locations across Newark & Passaic NJ. Walk-ins always welcome — no appointment needed.</p>
               </div>
 
               <div className="space-y-3">
@@ -41,14 +41,14 @@ export default function LocationsPage() {
                       <div>
                         <span className="text-[10px] font-bold text-red-700 uppercase tracking-wider">{loc.city}</span>
                         <h3 className="font-bold text-zinc-900 text-lg" style={{ fontFamily: "Plus Jakarta Sans" }}>{loc.address}</h3>
-                        <p className="text-[#603e39] text-sm">{loc.cityStateZip}{loc.note ? ` · ${loc.note}` : ""}</p>
+                        <p className="text-stone-600 text-sm">{loc.cityStateZip}{loc.note ? ` · ${loc.note}` : ""}</p>
                       </div>
                       <span className="flex items-center gap-1.5 text-xs text-emerald-600 font-bold flex-shrink-0">
                         <span className="w-2 h-2 rounded-full bg-emerald-500" /> Open
                       </span>
                     </div>
-                    <div className="flex items-start gap-3 mb-3 text-sm text-[#603e39]">
-                      <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    <div className="flex items-start gap-3 mb-3 text-sm text-stone-600">
+                      <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                       <div>
                         <p>{loc.hours.weekday}</p>
                         <p>{loc.hours.weekend}</p>
@@ -62,7 +62,7 @@ export default function LocationsPage() {
                           Directions
                         </a>
                         <a href={`tel:${loc.phone.replace(/-/g,"")}`}
-                          className="bg-[#0050d7] text-white text-xs font-bold px-4 py-2 rounded-lg hover:brightness-110 transition-all">
+                          className="bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg hover:brightness-110 transition-all">
                           Call Now
                         </a>
                       </div>
@@ -75,18 +75,18 @@ export default function LocationsPage() {
             {/* Right — map */}
             <div className="lg:col-span-7 h-[600px] rounded-3xl overflow-hidden shadow-xl bg-zinc-200 relative">
               <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-zinc-200 to-zinc-300">
-                <div className="text-center text-zinc-500">
+                <div className="text-center text-stone-500">
                   <svg className="w-16 h-16 mx-auto mb-3 opacity-20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" strokeWidth={1}/></svg>
                   <p className="text-sm font-medium opacity-40">Google Maps embed</p>
                   <p className="text-xs opacity-30 mt-1">Newark & Passaic, NJ</p>
                 </div>
               </div>
-              <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur px-5 py-4 rounded-2xl shadow-lg border border-white/50 max-w-xs">
+              <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur px-5 py-4 rounded-2xl shadow-lg border border-zinc-1000 max-w-xs">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-red-600 text-sm">★★★★★</span>
                   <span className="font-bold text-sm text-zinc-900">4.9 Star Rating</span>
                 </div>
-                <p className="text-xs text-zinc-500 italic">&ldquo;Best screen repair in Passaic! Done in 20 minutes.&rdquo; — Maria R.</p>
+                <p className="text-xs text-stone-500 italic">&ldquo;Best screen repair in Passaic! Done in 20 minutes.&rdquo; — Maria R.</p>
               </div>
             </div>
           </div>
@@ -99,14 +99,14 @@ export default function LocationsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {REVIEWS.map((r, i) => (
-              <div key={i} className="p-8 bg-[#f3f3f3] rounded-3xl border border-white/40">
+              <div key={i} className="p-8 bg-zinc-100 rounded-3xl border border-white/40">
                 <div className="flex text-amber-400 mb-4 text-sm">{"★★★★★"}</div>
                 <p className="text-zinc-700 italic leading-relaxed text-sm mb-6">&ldquo;{r.text}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-zinc-300" />
                   <div>
                     <p className="font-bold text-sm text-zinc-900">{r.name}</p>
-                    <p className="text-xs text-[#603e39]">{r.loc}</p>
+                    <p className="text-xs text-stone-600">{r.loc}</p>
                   </div>
                 </div>
               </div>
@@ -114,14 +114,14 @@ export default function LocationsPage() {
           </div>
           <div className="text-center mt-10">
             <a href="https://www.google.com/search?q=Talk+N+Fix+Wireless" target="_blank" rel="noopener noreferrer"
-              className="text-[#0050d7] font-bold underline underline-offset-4 text-sm hover:text-[#003da9] transition-colors">
+              className="text-blue-700 font-bold underline underline-offset-4 text-sm hover:text-[#003da9] transition-colors">
               Read all 6,500+ reviews on Google
             </a>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="px-6 py-16 bg-[#f3f3f3]">
+        <section className="px-6 py-16 bg-zinc-100">
           <div className="max-w-4xl mx-auto bg-primary-gradient rounded-[2.5rem] p-12 text-center relative overflow-hidden">
             <div className="absolute -top-16 -left-16 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
             <h2 className="text-3xl md:text-5xl font-black text-white mb-5 relative z-10" style={{ fontFamily: "Plus Jakarta Sans" }}>Walk In Today</h2>

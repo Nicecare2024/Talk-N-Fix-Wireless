@@ -74,19 +74,19 @@ export default function ServicesPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20 bg-[#f9f9f9]">
+      <main className="pt-20 bg-stone-50">
 
         {/* Hero */}
         <section className="relative px-6 py-20 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#ffdad4] text-[#410000] text-[0.75rem] font-bold rounded-full tracking-widest uppercase mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-red-100 text-red-950 text-[0.75rem] font-bold rounded-full tracking-widest uppercase mb-6">
                 Professional Craftsmanship
               </span>
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-zinc-900 mb-6 leading-[1.05]" style={{ fontFamily: "Plus Jakarta Sans" }}>
                 Precision <span className="text-red-700">Repair</span> for the Modern Era.
               </h1>
-              <p className="text-[#603e39] text-lg leading-relaxed mb-8 max-w-xl">
+              <p className="text-stone-600 text-lg leading-relaxed mb-8 max-w-xl">
                 Your device is an extension of yourself. We treat every screen, circuit, and battery with laboratory-grade precision and editorial attention to detail.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -94,35 +94,35 @@ export default function ServicesPage() {
                   Book Your Repair
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </Link>
-                <div className="flex items-center gap-3 px-6 py-4 rounded-xl bg-[#f3f3f3] border border-[#ebbbb4]/20">
-                  <svg className="w-5 h-5 text-[#0050d7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+                <div className="flex items-center gap-3 px-6 py-4 rounded-xl bg-zinc-100 border border-red-200/20">
+                  <svg className="w-5 h-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
                   <span className="font-bold text-zinc-900 text-sm">Warranty Guaranteed</span>
                 </div>
               </div>
             </div>
             <div className="relative">
               <div className="aspect-square rounded-[2rem] overflow-hidden shadow-2xl bg-gradient-to-br from-zinc-200 to-zinc-300 flex items-center justify-center">
-                <div className="text-center text-zinc-500">
+                <div className="text-center text-stone-500">
                   <svg className="w-20 h-20 mx-auto mb-3 opacity-20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={0.8}><path strokeLinecap="round" strokeLinejoin="round" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
                   <p className="text-sm opacity-40">Add technician photo here</p>
                 </div>
               </div>
               {/* Floating stat card */}
-              <div className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur p-6 rounded-2xl shadow-xl max-w-[220px] border border-white/50">
+              <div className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur p-6 rounded-2xl shadow-xl max-w-[220px] border border-zinc-1000">
                 <p className="font-bold text-xs text-red-700 uppercase tracking-wider mb-1">Live Status</p>
                 <p className="text-2xl font-black text-zinc-900" style={{ fontFamily: "Plus Jakarta Sans" }}>98% Success</p>
-                <p className="text-[#603e39] text-xs mt-1">On water damage recoveries this month.</p>
+                <p className="text-stone-600 text-xs mt-1">On water damage recoveries this month.</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Bento services grid */}
-        <section className="px-6 py-20 bg-[#f3f3f3]">
+        <section className="px-6 py-20 bg-zinc-100">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
               <h2 className="text-4xl font-extrabold text-zinc-900 mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>Specialized Expertise</h2>
-              <p className="text-[#603e39]">Every component has its own protocol. We master them all.</p>
+              <p className="text-stone-600">Every component has its own protocol. We master them all.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Wide card */}
@@ -132,7 +132,7 @@ export default function ServicesPage() {
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                   </div>
                   <h3 className="text-2xl font-bold text-zinc-900 mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>Screen Replacement</h3>
-                  <p className="text-[#603e39] max-w-md mb-6 leading-relaxed">OLED and Retina displays restored to original factory specifications. No ghost touches, no dead pixels. Just flawless clarity.</p>
+                  <p className="text-stone-600 max-w-md mb-6 leading-relaxed">OLED and Retina displays restored to original factory specifications. No ghost touches, no dead pixels. Just flawless clarity.</p>
                   <Link href="/services/iphone-screen-repair" className="text-red-700 font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all text-sm">
                     View Detail <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/></svg>
                   </Link>
@@ -143,22 +143,22 @@ export default function ServicesPage() {
               </div>
               {/* Battery */}
               <div className="bg-white p-8 rounded-[2rem] group hover:shadow-2xl transition-all duration-500">
-                <div className="w-12 h-12 rounded-xl bg-[#0050d7]/10 text-[#0050d7] flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-xl bg-blue-700/10 text-blue-700 flex items-center justify-center mb-6">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/><path d="M7 11h4M9 9v4"/></svg>
                 </div>
                 <h3 className="text-2xl font-bold text-zinc-900 mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>Battery Swap</h3>
-                <p className="text-[#603e39] mb-6 leading-relaxed text-sm">Certified cells that restore your device&apos;s all-day performance and peak capacity.</p>
-                <Link href="/services/battery-replacement" className="text-[#0050d7] font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all text-sm">
+                <p className="text-stone-600 mb-6 leading-relaxed text-sm">Certified cells that restore your device&apos;s all-day performance and peak capacity.</p>
+                <Link href="/services/battery-replacement" className="text-blue-700 font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all text-sm">
                   Check Price <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/></svg>
                 </Link>
               </div>
               {/* Charging port */}
               <div className="bg-white p-8 rounded-[2rem] group hover:shadow-2xl transition-all duration-500">
-                <div className="w-12 h-12 rounded-xl bg-zinc-100 text-zinc-600 flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-xl bg-zinc-100 text-stone-600 flex items-center justify-center mb-6">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 8V2M15 8V2M18 8H6a2 2 0 0 0-2 2v3a6 6 0 0 0 12 0v-3a2 2 0 0 0-2-2ZM12 22v-5"/></svg>
                 </div>
                 <h3 className="text-2xl font-bold text-zinc-900 mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>Charging Port</h3>
-                <p className="text-[#603e39] mb-6 leading-relaxed text-sm">Addressing connectivity issues with micro-soldering and high-grade port components.</p>
+                <p className="text-stone-600 mb-6 leading-relaxed text-sm">Addressing connectivity issues with micro-soldering and high-grade port components.</p>
               </div>
               {/* Camera + Water damage */}
               <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -167,7 +167,7 @@ export default function ServicesPage() {
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3"/></svg>
                   </div>
                   <h3 className="text-2xl font-bold text-zinc-900 mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>Camera Repair</h3>
-                  <p className="text-[#603e39] leading-relaxed text-sm">Focus calibration and lens replacement for crystal clear captures.</p>
+                  <p className="text-stone-600 leading-relaxed text-sm">Focus calibration and lens replacement for crystal clear captures.</p>
                 </div>
                 <div className="bg-red-700 text-white p-8 rounded-[2rem] group hover:shadow-2xl transition-all duration-500">
                   <div className="w-12 h-12 rounded-xl bg-white/20 text-white flex items-center justify-center mb-6">
@@ -188,15 +188,15 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {SERVICES.map(s => (
                 <Link key={s.id} href={`/services/${s.id}`}
-                  className="group bg-[#f3f3f3] p-6 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 block">
+                  className="group bg-zinc-100 p-6 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 block">
                   <div className="flex justify-between items-start mb-6">
                     <div className="w-11 h-11 bg-white rounded-xl flex items-center justify-center text-zinc-700 group-hover:bg-red-700 group-hover:text-white transition-colors shadow-sm">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
                     </div>
-                    <span className="text-[#603e39] text-xs tracking-widest font-bold">{PRICING[s.id] ?? "CALL"}</span>
+                    <span className="text-stone-600 text-xs tracking-widest font-bold">{PRICING[s.id] ?? "CALL"}</span>
                   </div>
                   <h3 className="font-bold text-zinc-900 mb-2 text-base" style={{ fontFamily: "Plus Jakarta Sans" }}>{s.title}</h3>
-                  <p className="text-[#603e39] text-xs leading-relaxed mb-4">{s.description}</p>
+                  <p className="text-stone-600 text-xs leading-relaxed mb-4">{s.description}</p>
                   <span className="text-red-700 font-bold text-xs flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     View Details <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </span>
@@ -209,7 +209,7 @@ export default function ServicesPage() {
         {/* Pricing table */}
         <section className="px-6 py-24 max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-[0.75rem] font-bold tracking-[0.2em] text-[#603e39] uppercase mb-4 block">Transparent Pricing</span>
+            <span className="text-[0.75rem] font-bold tracking-[0.2em] text-stone-600 uppercase mb-4 block">Transparent Pricing</span>
             <h2 className="text-4xl md:text-5xl font-extrabold text-zinc-900" style={{ fontFamily: "Plus Jakarta Sans" }}>Major Model Estimates</h2>
           </div>
           <div className="overflow-x-auto">
@@ -222,9 +222,9 @@ export default function ServicesPage() {
                   <th className="py-5 px-4 font-bold text-zinc-900 text-base">Charging Port</th>
                 </tr>
               </thead>
-              <tbody className="text-[#603e39]">
+              <tbody className="text-stone-600">
                 {PRICING_TABLE.map((row, i) => (
-                  <tr key={i} className={`${i % 2 === 1 ? "bg-[#f3f3f3]" : ""} hover:bg-[#ffdad4]/20 transition-colors`}>
+                  <tr key={i} className={`${i % 2 === 1 ? "bg-zinc-100" : ""} hover:bg-red-100/20 transition-colors`}>
                     <td className="py-5 px-4 font-bold text-zinc-900">{row.model}</td>
                     <td className="py-5 px-4">{row.screen}</td>
                     <td className="py-5 px-4">{row.battery}</td>
@@ -234,7 +234,7 @@ export default function ServicesPage() {
               </tbody>
             </table>
           </div>
-          <p className="mt-6 text-sm text-center text-[#603e39] italic">
+          <p className="mt-6 text-sm text-center text-stone-600 italic">
             * All prices are estimates. Final quote provided after visual inspection. Call for exact pricing.
           </p>
         </section>
@@ -255,7 +255,7 @@ export default function ServicesPage() {
                     {step.n}
                   </div>
                   <h4 className="text-xl font-bold mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>{step.title}</h4>
-                  <p className="text-zinc-400 text-sm leading-relaxed">{step.desc}</p>
+                  <p className="text-stone-500 text-sm leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -263,14 +263,14 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA */}
-        <section className="px-6 py-20 bg-[#f9f9f9]">
+        <section className="px-6 py-20 bg-stone-50">
           <div className="max-w-4xl mx-auto text-center bg-white p-12 rounded-[3rem] shadow-card relative overflow-hidden">
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-red-700/5 rounded-full blur-3xl" />
             <h2 className="text-4xl font-extrabold text-zinc-900 mb-5" style={{ fontFamily: "Plus Jakarta Sans" }}>Ready to fix your device?</h2>
-            <p className="text-[#603e39] text-lg mb-10 max-w-xl mx-auto">Join over 6,500 satisfied customers who trust Talk N Fix for their mobile repair needs.</p>
+            <p className="text-stone-600 text-lg mb-10 max-w-xl mx-auto">Join over 6,500 satisfied customers who trust Talk N Fix for their mobile repair needs.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/book" className="bg-primary-gradient text-white px-10 py-4 rounded-xl font-bold text-base hover:brightness-110 transition-all">Start My Repair</Link>
-              <Link href="/locations" className="bg-[#e8e8e8] text-zinc-900 px-10 py-4 rounded-xl font-bold text-base hover:bg-[#e2e2e2] transition-colors">Find a Store</Link>
+              <Link href="/locations" className="bg-zinc-200 text-zinc-900 px-10 py-4 rounded-xl font-bold text-base hover:bg-zinc-200 transition-colors">Find a Store</Link>
             </div>
           </div>
         </section>

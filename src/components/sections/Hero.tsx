@@ -47,28 +47,28 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[870px] flex items-center overflow-hidden px-6 pt-20 bg-[#f9f9f9]">
+    <section className="relative min-h-[870px] flex items-center overflow-hidden px-6 pt-20 bg-stone-50">
       {/* Subtle bg orb */}
       <div className="absolute -top-20 -right-20 w-96 h-96 bg-red-600/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16">
         {/* Left */}
         <div className="z-10">
-          <span className="inline-block py-1 px-3 rounded-full bg-[#dbe1ff] text-[#00174b] text-[0.75rem] font-bold tracking-widest mb-6 uppercase">
+          <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-950 text-[0.75rem] font-bold tracking-widest mb-6 uppercase">
             Premium Mobile Care
           </span>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-zinc-900 leading-[1.05] mb-6" style={{ fontFamily: "Plus Jakarta Sans" }}>
             Expert Mobile<br />Repairs in{" "}
             <span className="text-red-700">30–45 Minutes</span>
           </h1>
-          <p className="text-lg text-[#603e39] max-w-xl mb-10 leading-relaxed">
+          <p className="text-lg text-stone-600 max-w-xl mb-10 leading-relaxed">
             Precision engineering meets rapid service. Our certified technicians use laboratory-grade components to restore your device to factory perfection while you wait.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Link href="/book" className="bg-primary-gradient text-white font-bold px-8 py-4 rounded-xl text-lg shadow-xl hover:brightness-110 transition-all active:scale-95 text-center">
               Get Instant Quote
             </Link>
-            <Link href="/locations" className="bg-white text-zinc-900 font-semibold px-8 py-4 rounded-xl text-lg border border-[#ebbbb4]/30 flex items-center justify-center gap-2 hover:bg-zinc-50 transition-all">
+            <Link href="/locations" className="bg-white text-zinc-900 font-semibold px-8 py-4 rounded-xl text-lg border border-red-200/30 flex items-center justify-center gap-2 hover:bg-zinc-50 transition-all">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               Find a Store
             </Link>
@@ -100,7 +100,7 @@ export default function Hero() {
               </div>
             </div>
             {/* Glass overlay card */}
-            <div className="absolute bottom-6 left-6 right-6 p-5 bg-white/80 backdrop-blur-xl rounded-2xl border border-white/50 shadow-lg">
+            <div className="absolute bottom-6 left-6 right-6 p-5 bg-white/80 backdrop-blur-xl rounded-2xl border border-zinc-1000 shadow-lg">
               <p className="text-zinc-900 font-bold mb-1" style={{ fontFamily: "Plus Jakarta Sans" }}>Precision Guaranteed</p>
               <p className="text-zinc-600 text-sm">We use genuine parts and advanced micro-soldering tools for all flagship models.</p>
             </div>

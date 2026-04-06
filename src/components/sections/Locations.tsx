@@ -2,7 +2,7 @@ import { LOCATIONS } from "@/lib/data";
 
 export default function Locations() {
   return (
-    <section id="locations" className="py-24 bg-[#f3f3f3] px-6">
+    <section id="locations" className="py-24 bg-zinc-100 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left — list */}
@@ -11,18 +11,18 @@ export default function Locations() {
             <h2 className="text-4xl font-extrabold text-zinc-900 mb-4" style={{ fontFamily: "Plus Jakarta Sans" }}>
               5 Locations Near You
             </h2>
-            <p className="text-[#603e39] mb-8 text-sm leading-relaxed">
+            <p className="text-stone-600 mb-8 text-sm leading-relaxed">
               Walk-ins always welcome. No appointment needed. Open 7 days a week across Newark & Passaic, NJ.
             </p>
 
             <div className="space-y-3">
               {LOCATIONS.map((loc) => (
-                <div key={loc.id} id={loc.id} className="p-5 rounded-2xl bg-white border border-[#ebbbb4]/20 hover:border-red-700/30 transition-all cursor-pointer group">
+                <div key={loc.id} id={loc.id} className="p-5 rounded-2xl bg-white border border-red-200/20 hover:border-red-700/30 transition-all cursor-pointer group">
                   <div className="flex items-start justify-between mb-2">
                     <div>
                       <span className="text-[10px] font-bold text-red-700 uppercase tracking-wider">{loc.city}</span>
                       <h4 className="font-bold text-zinc-900 text-base" style={{ fontFamily: "Plus Jakarta Sans" }}>{loc.address}</h4>
-                      <p className="text-xs text-[#603e39]">{loc.cityStateZip}{loc.note ? ` · ${loc.note}` : ""}</p>
+                      <p className="text-xs text-stone-600">{loc.cityStateZip}{loc.note ? ` · ${loc.note}` : ""}</p>
                     </div>
                     <span className="flex items-center gap-1 text-xs text-emerald-600 font-bold flex-shrink-0">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Open
@@ -53,7 +53,7 @@ export default function Locations() {
               </div>
             </div>
             {/* Floating review card */}
-            <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur px-5 py-4 rounded-2xl shadow-lg border border-white/50 max-w-xs">
+            <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur px-5 py-4 rounded-2xl shadow-lg border border-zinc-1000 max-w-xs">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-red-600 text-sm">★★★★★</span>
                 <span className="font-bold text-sm text-zinc-900">4.9 Rating</span>

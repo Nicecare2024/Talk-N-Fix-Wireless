@@ -18,8 +18,8 @@ const POSTS = [
 ];
 
 const CATEGORY_COLORS: Record<string, string> = {
-  Tips: "bg-[#dbe1ff] text-[#00174b]",
-  Guide: "bg-[#ffdad4] text-[#410000]",
+  Tips: "bg-blue-100 text-blue-950",
+  Guide: "bg-red-100 text-red-950",
   Samsung: "bg-zinc-100 text-zinc-700",
   iPhone: "bg-zinc-100 text-zinc-700",
   Computer: "bg-zinc-100 text-zinc-700",
@@ -29,7 +29,7 @@ export default function BlogPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20 bg-[#f9f9f9]">
+      <main className="pt-20 bg-stone-50">
         <section className="py-20 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
@@ -38,7 +38,7 @@ export default function BlogPage() {
                 <h1 className="text-5xl font-extrabold text-zinc-900" style={{ fontFamily: "Plus Jakarta Sans" }}>
                   Repair Tips & Guides
                 </h1>
-                <p className="text-[#603e39] max-w-sm text-sm">Expert advice from our certified technicians to help you get the most from your devices.</p>
+                <p className="text-stone-600 max-w-sm text-sm">Expert advice from our certified technicians to help you get the most from your devices.</p>
               </div>
             </div>
 
@@ -46,7 +46,7 @@ export default function BlogPage() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-card mb-8 group hover:shadow-xl transition-all">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="h-64 lg:h-auto bg-gradient-to-br from-zinc-200 to-zinc-300 flex items-center justify-center">
-                  <div className="text-center text-zinc-500">
+                  <div className="text-center text-stone-500">
                     <svg className="w-12 h-12 mx-auto mb-2 opacity-20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1}/></svg>
                     <p className="text-xs opacity-40">Featured image</p>
                   </div>
@@ -56,9 +56,9 @@ export default function BlogPage() {
                   <h2 className="text-2xl font-extrabold text-zinc-900 mb-3 group-hover:text-red-700 transition-colors" style={{ fontFamily: "Plus Jakarta Sans" }}>
                     {POSTS[0].title}
                   </h2>
-                  <p className="text-[#603e39] text-sm leading-relaxed mb-6">{POSTS[0].excerpt}</p>
+                  <p className="text-stone-600 text-sm leading-relaxed mb-6">{POSTS[0].excerpt}</p>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3 text-xs text-zinc-400">
+                    <div className="flex items-center gap-3 text-xs text-stone-500">
                       <span>{POSTS[0].date}</span>
                       <span>·</span>
                       <span>{POSTS[0].readTime}</span>
@@ -77,19 +77,19 @@ export default function BlogPage() {
                 <Link key={post.slug} href={`/blog/${post.slug}`}
                   className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 block">
                   <div className="h-44 bg-gradient-to-br from-zinc-100 to-zinc-200 flex items-center justify-center">
-                    <svg className="w-10 h-10 opacity-20 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1}/></svg>
+                    <svg className="w-10 h-10 opacity-20 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1}/></svg>
                   </div>
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
                       <span className={`px-3 py-1 rounded-full text-xs font-bold ${CATEGORY_COLORS[post.category] ?? "bg-zinc-100 text-zinc-700"}`}>{post.category}</span>
-                      <span className="text-zinc-400 text-xs">{post.readTime}</span>
+                      <span className="text-stone-500 text-xs">{post.readTime}</span>
                     </div>
                     <h2 className="text-base font-bold text-zinc-900 mb-2 group-hover:text-red-700 transition-colors leading-snug" style={{ fontFamily: "Plus Jakarta Sans" }}>
                       {post.title}
                     </h2>
-                    <p className="text-[#603e39] text-xs leading-relaxed mb-4">{post.excerpt}</p>
+                    <p className="text-stone-600 text-xs leading-relaxed mb-4">{post.excerpt}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-zinc-400 text-xs">{post.date}</span>
+                      <span className="text-stone-500 text-xs">{post.date}</span>
                       <span className="text-red-700 text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
                         Read More <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
                       </span>

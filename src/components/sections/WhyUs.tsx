@@ -19,10 +19,10 @@ export default function WhyUs() {
             <h2 className="text-4xl md:text-5xl font-extrabold text-zinc-900 mb-6 leading-tight" style={{ fontFamily: "Plus Jakarta Sans" }}>
               We Don&apos;t Just Fix Phones.<br />We Fix Your Day.
             </h2>
-            <p className="text-[#603e39] leading-relaxed mb-4">
+            <p className="text-stone-600 leading-relaxed mb-4">
               Every repair is handled with care, precision, and transparency. No hidden fees. No runaround. Just results.
             </p>
-            <p className="text-[#603e39] leading-relaxed mb-8">
+            <p className="text-stone-600 leading-relaxed mb-8">
               Founded in 2014 by Rey — who built this business from nothing — Talk N Fix Wireless repairs over 1,000 devices every month and has earned 6,500+ Google reviews.
             </p>
             <div className="flex gap-4">
@@ -37,12 +37,12 @@ export default function WhyUs() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {FEATURES.map((f) => (
-              <div key={f.title} className="bg-[#f3f3f3] rounded-2xl p-6 hover:bg-[#ffdad4]/30 transition-colors group">
+              <div key={f.title} className="bg-zinc-100 rounded-2xl p-6 hover:bg-red-100/30 transition-colors group">
                 <div className="w-8 h-8 rounded-lg bg-red-700/10 flex items-center justify-center mb-3">
                   <svg className="w-4 h-4 text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
                 </div>
                 <h4 className="text-zinc-900 font-bold mb-1.5 text-sm" style={{ fontFamily: "Plus Jakarta Sans" }}>{f.title}</h4>
-                <p className="text-[#603e39] text-xs leading-relaxed">{f.desc}</p>
+                <p className="text-stone-600 text-xs leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

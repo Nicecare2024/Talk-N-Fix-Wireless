@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function CTABanner() {
   return (
-    <section className="py-20 px-6 bg-[#f3f3f3]">
+    <section className="py-20 px-6 bg-zinc-100">
       <div className="max-w-7xl mx-auto">
         <div className="bg-primary-gradient rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden">
           <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />

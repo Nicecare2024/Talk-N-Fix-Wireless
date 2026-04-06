@@ -16,7 +16,7 @@ export default function Reviews() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {REVIEWS.map((r, i) => (
-            <div key={i} className="bg-zinc-800/50 p-8 rounded-3xl border border-white/5 backdrop-blur-sm">
+            <div key={i} className="bg-zinc-800/50 p-8 rounded-3xl border border-zinc-100 backdrop-blur-sm">
               <div className="flex items-center gap-4 mb-6">
                 <div className={`w-12 h-12 rounded-full ${r.color} flex items-center justify-center text-white font-bold`}>
                   {r.initial}

@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="color-scheme" content="light" />
         <SEOSchema />
       </head>
-      <body>
+      <body suppressHydrationWarning style={{ backgroundColor: '#f9f9f9', color: '#1a1c1c' }}>
         {children}
         <AIChat />
         {/* Floating call button — mobile only */}
