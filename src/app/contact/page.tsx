@@ -23,14 +23,14 @@ export default function ContactPage() {
     <>
       <Navbar />
       <main className="pt-20 bg-stone-50">
-        <section className="py-20 px-6">
+        <section className="py-12 sm:py-20 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <span className="inline-block px-3 py-1 bg-red-100 text-red-950 text-[0.75rem] font-bold rounded-full tracking-widest uppercase mb-4">Get In Touch</span>
-              <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900" style={{ fontFamily: "Plus Jakarta Sans" }}>Contact Us</h1>
+              <h1 className="text-3xl sm:text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900" style={{ fontFamily: "Plus Jakarta Sans" }}>Contact Us</h1>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12">
               {/* Locations */}
               <div className="space-y-4">
                 <h2 className="text-2xl font-extrabold text-zinc-900 mb-6" style={{ fontFamily: "Plus Jakarta Sans" }}>Our Locations</h2>
@@ -40,12 +40,12 @@ export default function ContactPage() {
                     <h3 className="font-bold text-zinc-900 text-base mt-0.5" style={{ fontFamily: "Plus Jakarta Sans" }}>{loc.address}</h3>
                     <p className="text-stone-600 text-sm mb-2">{loc.cityStateZip}</p>
                     <a href={`tel:${loc.phone.replace(/-/g,"")}`} className="text-zinc-700 font-semibold text-sm hover:text-red-700 transition-colors">{loc.phone}</a>
-                    <p className="text-stone-500 text-xs mt-1">{loc.hours.weekday} · {loc.hours.weekend}</p>
+                    <p className="text-stone-500 text-xs mt-1">{loc.hours.weekday} Â· {loc.hours.weekend}</p>
                   </div>
                 ))}
 
                 {/* Immediate help card */}
-                <div className="bg-zinc-900 text-white p-8 rounded-2xl relative overflow-hidden">
+                <div className="bg-zinc-900 text-white p-5 sm:p-8 rounded-2xl relative overflow-hidden">
                   <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>Need Immediate Help?</h3>
                   <p className="text-stone-500 text-sm mb-5 leading-relaxed">Speak directly with a technician for complex diagnostic questions.</p>
                   <div className="space-y-3">
@@ -63,14 +63,14 @@ export default function ContactPage() {
               </div>
 
               {/* Form */}
-              <div className="bg-white rounded-3xl p-8 border border-zinc-100 shadow-card">
+              <div className="bg-white rounded-3xl p-5 sm:p-8 border border-zinc-100 shadow-card">
                 {sent ? (
                   <div className="text-center py-12">
                     <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-4">
                       <svg className="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <h3 className="text-2xl font-extrabold text-zinc-900 mb-2" style={{ fontFamily: "Plus Jakarta Sans" }}>Message Sent!</h3>
-                    <p className="text-stone-600 text-sm">We&apos;ll get back to you shortly. Or just walk in — no appointment needed!</p>
+                    <p className="text-stone-600 text-sm">We&apos;ll get back to you shortly. Or just walk in â€” no appointment needed!</p>
                   </div>
                 ) : (
                   <>
@@ -142,3 +142,4 @@ export default function ContactPage() {
     </>
   );
 }
+

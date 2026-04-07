@@ -4,13 +4,13 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Blog — Phone Repair Tips & News",
+  title: "Blog â€” Phone Repair Tips & News",
   description: "Expert tips, guides and news about phone repair in Newark & Passaic NJ from Talk N Fix Wireless.",
 };
 
 const POSTS = [
   { slug: "avoid-overpaying-phone-repair-newark-nj", title: "How to Avoid Overpaying for Cell Phone Repair in Newark NJ", excerpt: "Not all repair shops are equal. Here's what to look for to make sure you're getting fair pricing and quality parts.", date: "Aug 11, 2025", category: "Tips", readTime: "4 min read" },
-  { slug: "guide-to-iphone-repair-in-new-jersey", title: "The Complete Guide to iPhone Repair Options in New Jersey", excerpt: "From screen replacements to battery swaps — everything you need to know about getting your iPhone fixed in NJ.", date: "Aug 11, 2025", category: "Guide", readTime: "6 min read" },
+  { slug: "guide-to-iphone-repair-in-new-jersey", title: "The Complete Guide to iPhone Repair Options in New Jersey", excerpt: "From screen replacements to battery swaps â€” everything you need to know about getting your iPhone fixed in NJ.", date: "Aug 11, 2025", category: "Guide", readTime: "6 min read" },
   { slug: "fix-samsung-broken-screen-passaic", title: "Samsung Broken Screen? Here's How We Fix It in Passaic NJ", excerpt: "A cracked Samsung screen doesn't have to ruin your day. Our Passaic team can have it fixed in under an hour.", date: "Sep 15, 2025", category: "Samsung", readTime: "3 min read" },
   { slug: "iphone-battery-replacement-new-jersey", title: "How Battery Replacement Services Can Revive Your iPhone in NJ", excerpt: "Is your iPhone dying by noon? A battery replacement might be all you need to get back to full performance.", date: "Jan 8, 2026", category: "iPhone", readTime: "4 min read" },
   { slug: "computer-repair-passaic-nj", title: "Why Computer Repair Services in Passaic NJ Offer Great Value", excerpt: "Before you buy a new laptop, consider a repair. Our Passaic team can diagnose and fix most issues same day.", date: "Sep 23, 2025", category: "Computer", readTime: "3 min read" },
@@ -30,12 +30,12 @@ export default function BlogPage() {
     <>
       <Navbar />
       <main className="pt-20 bg-stone-50">
-        <section className="py-20 px-6">
+        <section className="py-12 sm:py-20 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
               <p className="text-red-700 font-bold tracking-[0.2em] text-sm mb-3 uppercase">Blog</p>
               <div className="flex flex-col md:flex-row justify-between items-end gap-6">
-                <h1 className="text-5xl font-extrabold text-zinc-900" style={{ fontFamily: "Plus Jakarta Sans" }}>
+                <h1 className="text-3xl sm:text-5xl font-extrabold text-zinc-900" style={{ fontFamily: "Plus Jakarta Sans" }}>
                   Repair Tips & Guides
                 </h1>
                 <p className="text-stone-600 max-w-sm text-sm">Expert advice from our certified technicians to help you get the most from your devices.</p>
@@ -51,7 +51,7 @@ export default function BlogPage() {
                     <p className="text-xs opacity-40">Featured image</p>
                   </div>
                 </div>
-                <div className="p-10 flex flex-col justify-center">
+                <div className="p-6 sm:p-10 flex flex-col justify-center">
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 ${CATEGORY_COLORS[POSTS[0].category]}`}>{POSTS[0].category}</span>
                   <h2 className="text-2xl font-extrabold text-zinc-900 mb-3 group-hover:text-red-700 transition-colors" style={{ fontFamily: "Plus Jakarta Sans" }}>
                     {POSTS[0].title}
@@ -60,7 +60,7 @@ export default function BlogPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3 text-xs text-stone-500">
                       <span>{POSTS[0].date}</span>
-                      <span>·</span>
+                      <span>Â·</span>
                       <span>{POSTS[0].readTime}</span>
                     </div>
                     <Link href={`/blog/${POSTS[0].slug}`} className="text-red-700 font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
@@ -105,3 +105,4 @@ export default function BlogPage() {
     </>
   );
 }
+

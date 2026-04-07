@@ -113,6 +113,9 @@ export default function Navbar() {
           <Link href="/book" onClick={() => setMobileOpen(false)} className="block w-full text-center bg-primary-gradient text-white font-bold px-5 py-3 rounded-xl">
             Get Quote
           </Link>
+          <a href="tel:9737785900" onClick={() => setMobileOpen(false)} className="block w-full text-center bg-zinc-100 text-zinc-900 font-bold px-5 py-3 rounded-xl text-sm">
+            Call 973-778-5900
+          </a>
         </div>
       )}
     </nav>
