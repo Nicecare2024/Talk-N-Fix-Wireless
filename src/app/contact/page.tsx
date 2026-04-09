@@ -40,7 +40,7 @@ export default function ContactPage() {
                     <h3 className="font-bold text-zinc-900 text-base mt-0.5" style={{ fontFamily: "Plus Jakarta Sans" }}>{loc.address}</h3>
                     <p className="text-stone-600 text-sm mb-2">{loc.cityStateZip}</p>
                     <a href={`tel:${loc.phone.replace(/-/g,"")}`} className="text-zinc-700 font-semibold text-sm hover:text-red-700 transition-colors">{loc.phone}</a>
-                    <p className="text-stone-500 text-xs mt-1">{loc.hours.weekday} Â· {loc.hours.weekend}</p>
+                    <p className="text-stone-500 text-xs mt-1">{loc.hours.weekday} · {loc.hours.weekend}</p>
                   </div>
                 ))}
 
@@ -70,7 +70,7 @@ export default function ContactPage() {
                       <svg className="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
                     </div>
                     <h3 className="text-2xl font-extrabold text-zinc-900 mb-2" style={{ fontFamily: "Plus Jakarta Sans" }}>Message Sent!</h3>
-                    <p className="text-stone-600 text-sm">We&apos;ll get back to you shortly. Or just walk in â€” no appointment needed!</p>
+                    <p className="text-stone-600 text-sm">We&apos;ll get back to you shortly. Or just walk in "” no appointment needed!</p>
                   </div>
                 ) : (
                   <>

@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5 { font-family: 'Plus Jakarta Sans', sans-serif; }
 }
 
 .bg-primary-gradient { background: linear-gradient(135deg, #bc0100 0%, #eb0000 100%); }
-.glass-nav { background: rgba(255,255,255,0.92) !important; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+.glass-nav { background: rgba(255,255,255,0.92) !important; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); overflow: visible !important; }
 .shadow-nav { box-shadow: 0px 12px 32px rgba(26,28,28,0.06); }
 .shadow-card { box-shadow: 0px 12px 32px rgba(26,28,28,0.06); }
 .shadow-primary { box-shadow: 0px 12px 32px rgba(188,1,0,0.2); }

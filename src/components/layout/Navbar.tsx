@@ -26,22 +26,22 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "glass-nav shadow-nav" : "bg-white/90 backdrop-blur-xl"}`}>
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "glass-nav shadow-nav" : "bg-white/90 backdrop-blur-xl"}`} style={{ overflow: "visible" }}>
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between" style={{ overflow: "visible" }}>
         {/* Logo */}
         <Link href="/" className="text-xl font-black tracking-tight text-zinc-900" style={{ fontFamily: "Plus Jakarta Sans" }}>
           Talk N&apos; Fix Wireless
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8" style={{ overflow: "visible" }}>
           <div className="relative" onMouseEnter={() => setRepairsOpen(true)} onMouseLeave={() => setRepairsOpen(false)}>
             <button className={`${navLinkClass("/services")} py-6`}>
               Repair Services
               <svg className={`w-3 h-3 transition-transform ${repairsOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
             </button>
             {repairsOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[520px] bg-white rounded-2xl shadow-card border border-zinc-100 p-6 grid grid-cols-2 gap-2">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[520px] bg-white rounded-2xl shadow-card border border-zinc-100 p-6 grid grid-cols-2 z-[200] gap-2">
                 <div>
                   <p className="text-[10px] font-bold text-red-700 tracking-widest uppercase mb-3">Popular</p>
                   {SERVICES.filter(s => s.popular).map(s => (
@@ -71,7 +71,7 @@ export default function Navbar() {
               <svg className={`w-3 h-3 transition-transform ${locationsOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
             </button>
             {locationsOpen && (
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-card border border-zinc-100 p-3">
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-card border border-zinc-100 p-3 z-[200]">
                 {LOCATIONS.map(loc => (
                   <Link key={loc.id} href={`/locations#${loc.id}`} className="block p-3 rounded-xl hover:bg-zinc-50 transition-all">
                     <p className="text-[10px] font-bold text-red-700 uppercase tracking-wider">{loc.city}</p>
@@ -104,7 +104,7 @@ export default function Navbar() {
 
             {/* Location dropdown */}
             {callOpen && (
-              <div className="absolute top-full right-0 mt-1 w-72 bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-zinc-100 overflow-hidden z-50">
+              <div className="absolute top-full right-0 mt-1 w-72 bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-zinc-100 overflow-hidden z-[200]">
                 <div className="px-4 py-3 bg-zinc-50 border-b border-zinc-100">
                   <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Choose a Location to Call</p>
                 </div>

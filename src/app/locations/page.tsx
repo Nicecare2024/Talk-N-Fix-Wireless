@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 const REVIEWS = [
-  { text: "Thought my iPhone was a total loss after it fell in the pool. Talk N Fix revived it in two days. Truly professional and honest service.", name: "Jessica M.", loc: "Google Local Guide Â· 2 weeks ago" },
-  { text: "Best price for screen replacement in Jersey. Called 5 different places and they were the most reasonable and the fastest. 30 mins flat.", name: "Anthony G.", loc: "Verified Customer Â· 1 month ago" },
-  { text: "Great service for my Samsung S22. They had the part in stock. The shop is super clean and the techs are very knowledgeable.", name: "Roberto S.", loc: "Local Business Owner Â· 3 months ago" },
+  { text: "Thought my iPhone was a total loss after it fell in the pool. Talk N Fix revived it in two days. Truly professional and honest service.", name: "Jessica M.", loc: "Google Local Guide · 2 weeks ago" },
+  { text: "Best price for screen replacement in Jersey. Called 5 different places and they were the most reasonable and the fastest. 30 mins flat.", name: "Anthony G.", loc: "Verified Customer · 1 month ago" },
+  { text: "Great service for my Samsung S22. They had the part in stock. The shop is super clean and the techs are very knowledgeable.", name: "Roberto S.", loc: "Local Business Owner · 3 months ago" },
 ];
 
 export default function LocationsPage() {
@@ -24,14 +24,14 @@ export default function LocationsPage() {
         {/* Hero */}
         <section className="max-w-7xl mx-auto px-4 sm:px-4 sm:px-6 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left â€” store list */}
+            {/* Left "” store list */}
             <div className="lg:col-span-5 space-y-6">
               <div>
                 <span className="text-red-700 font-bold tracking-widest text-xs uppercase bg-red-700/5 px-3 py-1 rounded-full">New Jersey Premier Centers</span>
                 <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 mt-3 mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>
                   Find Your Store
                 </h1>
-                <p className="text-stone-600 text-lg">4 Locations across Newark & Passaic NJ. Walk-ins always welcome â€” no appointment needed.</p>
+                <p className="text-stone-600 text-lg">4 Locations across Newark & Passaic NJ. Walk-ins always welcome "” no appointment needed.</p>
               </div>
 
               <div className="space-y-3">
@@ -41,7 +41,7 @@ export default function LocationsPage() {
                       <div>
                         <span className="text-[10px] font-bold text-red-700 uppercase tracking-wider">{loc.city}</span>
                         <h3 className="font-bold text-zinc-900 text-lg" style={{ fontFamily: "Plus Jakarta Sans" }}>{loc.address}</h3>
-                        <p className="text-stone-600 text-sm">{loc.cityStateZip}{loc.note ? ` Â· ${loc.note}` : ""}</p>
+                        <p className="text-stone-600 text-sm">{loc.cityStateZip}{loc.note ? ` · ${loc.note}` : ""}</p>
                       </div>
                       <span className="flex items-center gap-1.5 text-xs text-emerald-600 font-bold flex-shrink-0">
                         <span className="w-2 h-2 rounded-full bg-emerald-500" /> Open
@@ -72,7 +72,7 @@ export default function LocationsPage() {
               </div>
             </div>
 
-            {/* Right â€” map */}
+            {/* Right "” map */}
             <div className="lg:col-span-7 h-64 sm:h-96 lg:h-[600px] rounded-3xl overflow-hidden shadow-xl bg-zinc-200 relative">
               <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-zinc-200 to-zinc-300">
                 <div className="text-center text-stone-500">
@@ -83,10 +83,10 @@ export default function LocationsPage() {
               </div>
               <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur px-5 py-4 rounded-2xl shadow-lg border border-zinc-1000 max-w-xs">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-red-600 text-sm">â˜…â˜…â˜…â˜…â˜…</span>
+                  <span className="text-red-600 text-sm">★★★★★</span>
                   <span className="font-bold text-sm text-zinc-900">4.9 Star Rating</span>
                 </div>
-                <p className="text-xs text-stone-500 italic">&ldquo;Best screen repair in Passaic! Done in 20 minutes.&rdquo; â€” Maria R.</p>
+                <p className="text-xs text-stone-500 italic">&ldquo;Best screen repair in Passaic! Done in 20 minutes.&rdquo; "” Maria R.</p>
               </div>
             </div>
           </div>
@@ -100,7 +100,9 @@ export default function LocationsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {REVIEWS.map((r, i) => (
               <div key={i} className="p-8 bg-zinc-100 rounded-3xl border border-white/40">
-                <div className="flex text-amber-400 mb-4 text-sm">{"â˜…â˜…â˜…â˜…â˜…"}</div>
+                <div className="flex gap-1 text-yellow-500 mb-4 text-sm">
+                {"★★★★★".split("").map((s,i) => <span key={i}>{s}</span>)}
+              </div>
                 <p className="text-zinc-700 italic leading-relaxed text-sm mb-6">&ldquo;{r.text}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-zinc-300" />

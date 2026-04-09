@@ -1,25 +1,25 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "About Us â€” Our Story",
+  title: "About Us - Our Story | Talk N Fix Wireless",
   description: "Talk N Fix Wireless was founded in 2014 by Rey in Newark NJ. From one store to 4 locations across Newark and Passaic NJ, repairing 1000+ devices monthly with 6500+ Google reviews.",
 };
 
 const STATS = [
   { value: "2014", label: "Founded" },
   { value: "1,000+", label: "Repairs / Month" },
-  { value: "5", label: "Locations" },
+  { value: "4", label: "Locations" },
   { value: "6,500+", label: "Google Reviews" },
 ];
 
 const STANDARDS = [
-  "Structured repair systems â€” not guesswork",
+  "Structured repair systems, not guesswork",
   "Corporate-level standards across all locations",
   "Highly trained, certified technicians",
-  "Fast 30â€“45 minute turnaround",
+  "Fast 30-45 minute turnaround",
   "Clean, professional stores",
   "Consistent customer experience every time",
 ];
@@ -48,18 +48,18 @@ export default function AboutPage() {
       <main className="pt-20 bg-stone-50">
 
         {/* Hero */}
-        <section className="relative px-4 sm:px-4 sm:px-6 py-12 sm:py-12 sm:py-20 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-6 sm:gap-12 items-center">
+        <section className="relative px-4 sm:px-6 py-12 sm:py-20 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 items-center">
             <div>
-              <span className="inline-block px-3 py-1 bg-red-100 text-red-950 text-[0.75rem] font-bold rounded-full tracking-widest uppercase mb-6">
+              <span className="inline-block px-3 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full tracking-widest uppercase mb-6">
                 Our Story
               </span>
-              <h1 className="text-4xl sm:text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-zinc-900 mb-6 leading-[1.05]" style={{ fontFamily: "Plus Jakarta Sans" }}>
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-zinc-900 mb-6 leading-tight" style={{ fontFamily: "Plus Jakarta Sans" }}>
                 Built on Risk.<br />
                 <span className="text-red-700">Driven by Trust.</span>
               </h1>
               <p className="text-stone-600 text-lg leading-relaxed mb-8">
-                Newark & Passaic&apos;s Most Trusted Same-Day Phone Repair. 30â€“45 Minute Repairs Â· 1,000+ Devices Fixed Monthly Â· Trusted by Thousands Across New Jersey.
+                Newark &amp; Passaic&apos;s Most Trusted Same-Day Phone Repair. 30-45 Minute Repairs. 1,000+ Devices Fixed Monthly. Trusted by Thousands Across New Jersey.
               </p>
               <Link href="/book" className="bg-primary-gradient text-white font-bold px-8 py-4 rounded-xl hover:brightness-110 transition-all shadow-primary inline-flex items-center gap-2">
                 Get Your Device Fixed
@@ -67,7 +67,7 @@ export default function AboutPage() {
               </Link>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-[2rem] overflow-hidden shadow-2xl">
+              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src="/team.png"
                   alt="Talk N Fix Wireless team and founder Rey"
@@ -92,15 +92,15 @@ export default function AboutPage() {
 
         {/* Founder story */}
         <section className="py-14 sm:py-24 bg-stone-50 px-4 sm:px-6">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-8 sm:gap-16 items-start">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-start">
             <div>
-              <p className="text-red-700 font-bold tracking-[0.2em] text-sm mb-4 uppercase">Meet the Founder</p>
+              <p className="text-red-700 font-bold tracking-widest text-sm mb-4 uppercase">Meet the Founder</p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 mb-6" style={{ fontFamily: "Plus Jakarta Sans" }}>
                 Meet Rey
               </h2>
               <div className="space-y-5 text-stone-600 leading-relaxed text-sm">
-                <p>Talk N Fix Wireless didn&apos;t start with funding or a big team. <strong className="text-zinc-900">It started with risk.</strong></p>
-                <p>In 2014, after years of buying, selling, unlocking, and wholesaling phones, Rey opened his first location. At the time, he was working at Wells Fargo â€” until he lost that job for focusing more on building the business.</p>
+                <p>Talk N Fix Wireless did not start with funding or a big team. <strong className="text-zinc-900">It started with risk.</strong></p>
+                <p>In 2014, after years of buying, selling, unlocking, and wholesaling phones, Rey opened his first location. At the time, he was working at Wells Fargo until he lost that job for focusing more on building the business.</p>
                 <p>No customers. No guaranteed income. Bills stacking up. There were moments he sat alone in the shop thinking he made the wrong decision.</p>
                 <p><strong className="text-zinc-900">Instead of quitting, he doubled down.</strong></p>
                 <p>He reached out to people directly, built relationships, and focused on one thing: delivering fast, high-quality service people could trust. That mindset became the foundation of Talk N Fix Wireless.</p>
@@ -131,7 +131,7 @@ export default function AboutPage() {
         <section className="py-16 bg-zinc-100 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-extrabold text-zinc-900 mb-8" style={{ fontFamily: "Plus Jakarta Sans" }}>
-              Serving Newark, Passaic & Surrounding Areas
+              Serving Newark, Passaic &amp; Surrounding Areas
             </h2>
             <div className="flex flex-wrap gap-3">
               {["Newark NJ","Passaic NJ","Clifton NJ","Paterson NJ","East Orange NJ","Bloomfield NJ","Irvington NJ","Belleville NJ","East Rutherford NJ","Hasbrouck Heights NJ","Wallington NJ","Lodi NJ","Kearny NJ","Montclair NJ","Harrison NJ","Hackensack NJ","Paramus NJ","Elizabeth NJ"].map(area => (
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 Built for Growth. <span className="text-red-700">Built to Lead.</span>
               </h2>
               <p className="text-stone-600 text-sm leading-relaxed mb-6">
-                Talk N Fix Wireless is not just another repair shop. We are building one of the most trusted phone repair brands in New Jersey â€” with plans to expand across new cities and eventually nationwide.
+                Talk N Fix Wireless is not just another repair shop. We are building one of the most trusted phone repair brands in New Jersey with plans to expand across new cities and eventually nationwide.
               </p>
               <ul className="space-y-4">
                 {FUTURE.map(f => (
@@ -180,13 +180,13 @@ export default function AboutPage() {
 
         {/* CTA */}
         <section className="py-16 bg-zinc-100 px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto bg-primary-gradient rounded-[2.5rem] p-6 sm:p-6 sm:p-12 text-center relative overflow-hidden">
+          <div className="max-w-4xl mx-auto bg-primary-gradient rounded-3xl p-6 sm:p-12 text-center relative overflow-hidden">
             <div className="absolute -top-16 -left-16 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
             <h2 className="text-3xl md:text-5xl font-black text-white mb-5 relative z-10" style={{ fontFamily: "Plus Jakarta Sans" }}>
               Get Your Phone Fixed Today
             </h2>
             <p className="text-white/80 mb-8 relative z-10 max-w-xl mx-auto">
-              Don&apos;t risk your device with low-quality repair shops. Trust a team that repairs over 1,000 devices every month.
+              Do not risk your device with low-quality repair shops. Trust a team that repairs over 1,000 devices every month.
             </p>
             <Link href="/locations" className="bg-white text-red-700 font-bold px-10 py-4 rounded-xl hover:scale-105 transition-transform inline-block relative z-10">
               Find Your Nearest Location
@@ -198,4 +198,3 @@ export default function AboutPage() {
     </>
   );
 }
-

@@ -5,17 +5,8 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Phone Repair Tips & Blog | Talk N Fix Wireless Newark NJ",
-  description: "Expert phone repair tips, guides and news from Talk N Fix Wireless — serving Newark, Passaic and all of Northern NJ since 2014.",
+  description: "Expert phone repair tips, guides and news from Talk N Fix Wireless serving Newark, Passaic and all of Northern NJ since 2014.",
 };
-
-const POSTS = [
-  { slug: "avoid-overpaying-phone-repair-newark-nj", title: "How to Avoid Overpaying for Cell Phone Repair in Newark NJ", excerpt: "Not all repair shops are equal. Here's what to look for to make sure you're getting fair pricing and quality parts.", date: "Aug 11, 2025", category: "Tips", readTime: "4 min read" },
-  { slug: "guide-to-iphone-repair-in-new-jersey", title: "The Complete Guide to iPhone Repair Options in New Jersey", excerpt: "From screen replacements to battery swaps â€” everything you need to know about getting your iPhone fixed in NJ.", date: "Aug 11, 2025", category: "Guide", readTime: "6 min read" },
-  { slug: "fix-samsung-broken-screen-passaic", title: "Samsung Broken Screen? Here's How We Fix It in Passaic NJ", excerpt: "A cracked Samsung screen doesn't have to ruin your day. Our Passaic team can have it fixed in under an hour.", date: "Sep 15, 2025", category: "Samsung", readTime: "3 min read" },
-  { slug: "iphone-battery-replacement-new-jersey", title: "How Battery Replacement Services Can Revive Your iPhone in NJ", excerpt: "Is your iPhone dying by noon? A battery replacement might be all you need to get back to full performance.", date: "Jan 8, 2026", category: "iPhone", readTime: "4 min read" },
-  { slug: "computer-repair-passaic-nj", title: "Why Computer Repair Services in Passaic NJ Offer Great Value", excerpt: "Before you buy a new laptop, consider a repair. Our Passaic team can diagnose and fix most issues same day.", date: "Sep 23, 2025", category: "Computer", readTime: "3 min read" },
-  { slug: "trusted-wireless-repair-passaic-nj", title: "Why Choosing a Trusted Wireless Repair Service in Passaic NJ Matters", excerpt: "Your phone holds your life. Here's why you should only trust certified technicians with your device.", date: "Aug 11, 2025", category: "Tips", readTime: "5 min read" },
-];
 
 const BLOG_IMAGES = [
   "https://www.talknfixwireless.com/wp-content/uploads/2025/09/How-to-Ensure-Quality-Cell-Phone-Repair-in-Newark-NJ.jpg",
@@ -24,6 +15,15 @@ const BLOG_IMAGES = [
   "https://www.talknfixwireless.com/wp-content/uploads/2025/09/How-Battery-Replacement-Services-Can-Revive-Your-iPhone-in-New-Jersey.jpg",
   "https://www.talknfixwireless.com/wp-content/uploads/2025/09/Why-Computer-Repair-Services-in-Passaic-NJ-Offer-Great-Value.jpg",
   "https://www.talknfixwireless.com/wp-content/uploads/2025/08/Why-Choosing-a-Trusted-Wireless-Repair-Service-in-Passaic-NJ-Matters.jpg",
+];
+
+const POSTS = [
+  { slug: "avoid-overpaying-phone-repair-newark-nj", title: "How to Avoid Overpaying for Cell Phone Repair in Newark NJ", excerpt: "Not all repair shops are equal. Here is what to look for to make sure you are getting fair pricing and quality parts.", date: "Aug 11, 2025", category: "Tips", readTime: "4 min read" },
+  { slug: "guide-to-iphone-repair-in-new-jersey", title: "The Complete Guide to iPhone Repair Options in New Jersey", excerpt: "From screen replacements to battery swaps, everything you need to know about getting your iPhone fixed in NJ.", date: "Aug 11, 2025", category: "Guide", readTime: "6 min read" },
+  { slug: "fix-samsung-broken-screen-passaic", title: "Samsung Broken Screen? Here Is How We Fix It in Passaic NJ", excerpt: "A cracked Samsung screen does not have to ruin your day. Our Passaic team can have it fixed in under an hour.", date: "Sep 15, 2025", category: "Samsung", readTime: "3 min read" },
+  { slug: "iphone-battery-replacement-new-jersey", title: "How Battery Replacement Services Can Revive Your iPhone in NJ", excerpt: "Is your iPhone dying by noon? A battery replacement might be all you need to get back to full performance.", date: "Jan 8, 2026", category: "iPhone", readTime: "4 min read" },
+  { slug: "computer-repair-passaic-nj", title: "Why Computer Repair Services in Passaic NJ Offer Great Value", excerpt: "Before you buy a new laptop, consider a repair. Our Passaic team can diagnose and fix most issues same day.", date: "Sep 23, 2025", category: "Computer", readTime: "3 min read" },
+  { slug: "trusted-wireless-repair-passaic-nj", title: "Why Choosing a Trusted Wireless Repair Service in Passaic NJ Matters", excerpt: "Your phone holds your life. Here is why you should only trust certified technicians with your device.", date: "Aug 11, 2025", category: "Tips", readTime: "5 min read" },
 ];
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -42,10 +42,10 @@ export default function BlogPage() {
         <section className="py-12 sm:py-20 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
-              <p className="text-red-700 font-bold tracking-[0.2em] text-sm mb-3 uppercase">Blog</p>
+              <p className="text-red-700 font-bold tracking-widest text-sm mb-3 uppercase">Blog</p>
               <div className="flex flex-col md:flex-row justify-between items-end gap-6">
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-zinc-900" style={{ fontFamily: "Plus Jakarta Sans" }}>
-                  Repair Tips & Guides
+                  Repair Tips &amp; Guides
                 </h1>
                 <p className="text-stone-600 max-w-sm text-sm">Expert advice from our certified technicians to help you get the most from your devices.</p>
               </div>
@@ -70,7 +70,7 @@ export default function BlogPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3 text-xs text-stone-500">
                       <span>{POSTS[0].date}</span>
-                      <span>Â·</span>
+                      <span>·</span>
                       <span>{POSTS[0].readTime}</span>
                     </div>
                     <Link href={`/blog/${POSTS[0].slug}`} className="text-red-700 font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
@@ -83,12 +83,12 @@ export default function BlogPage() {
 
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {POSTS.slice(1).map(post => (
+              {POSTS.slice(1).map((post, idx) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`}
                   className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 block">
                   <div className="h-44 overflow-hidden">
                     <img
-                      src={BLOG_IMAGES[(POSTS.slice(1).indexOf(post) + 1) % BLOG_IMAGES.length]}
+                      src={BLOG_IMAGES[(idx + 1) % BLOG_IMAGES.length]}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
@@ -119,4 +119,3 @@ export default function BlogPage() {
     </>
   );
 }
-
