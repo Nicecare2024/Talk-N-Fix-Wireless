@@ -4,8 +4,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Blog â€” Phone Repair Tips & News",
-  description: "Expert tips, guides and news about phone repair in Newark & Passaic NJ from Talk N Fix Wireless.",
+  title: "Phone Repair Tips & Blog | Talk N Fix Wireless Newark NJ",
+  description: "Expert phone repair tips, guides and news from Talk N Fix Wireless — serving Newark, Passaic and all of Northern NJ since 2014.",
 };
 
 const POSTS = [
@@ -15,6 +15,15 @@ const POSTS = [
   { slug: "iphone-battery-replacement-new-jersey", title: "How Battery Replacement Services Can Revive Your iPhone in NJ", excerpt: "Is your iPhone dying by noon? A battery replacement might be all you need to get back to full performance.", date: "Jan 8, 2026", category: "iPhone", readTime: "4 min read" },
   { slug: "computer-repair-passaic-nj", title: "Why Computer Repair Services in Passaic NJ Offer Great Value", excerpt: "Before you buy a new laptop, consider a repair. Our Passaic team can diagnose and fix most issues same day.", date: "Sep 23, 2025", category: "Computer", readTime: "3 min read" },
   { slug: "trusted-wireless-repair-passaic-nj", title: "Why Choosing a Trusted Wireless Repair Service in Passaic NJ Matters", excerpt: "Your phone holds your life. Here's why you should only trust certified technicians with your device.", date: "Aug 11, 2025", category: "Tips", readTime: "5 min read" },
+];
+
+const BLOG_IMAGES = [
+  "https://www.talknfixwireless.com/wp-content/uploads/2025/09/How-to-Ensure-Quality-Cell-Phone-Repair-in-Newark-NJ.jpg",
+  "https://www.talknfixwireless.com/wp-content/uploads/2025/08/The-Complete-Guide-to-iPhone-Repair-Options-in-New-Jersey.jpg",
+  "https://www.talknfixwireless.com/wp-content/uploads/2025/09/Samsung-Broken-Screen-Heres-How-We-Fix-It-in-Passaic-NJ.jpg",
+  "https://www.talknfixwireless.com/wp-content/uploads/2025/09/How-Battery-Replacement-Services-Can-Revive-Your-iPhone-in-New-Jersey.jpg",
+  "https://www.talknfixwireless.com/wp-content/uploads/2025/09/Why-Computer-Repair-Services-in-Passaic-NJ-Offer-Great-Value.jpg",
+  "https://www.talknfixwireless.com/wp-content/uploads/2025/08/Why-Choosing-a-Trusted-Wireless-Repair-Service-in-Passaic-NJ-Matters.jpg",
 ];
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -47,7 +56,7 @@ export default function BlogPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="h-64 lg:h-auto overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80"
+                    src={BLOG_IMAGES[0]}
                     alt={POSTS[0].title}
                     className="w-full h-full object-cover"
                   />
@@ -79,7 +88,7 @@ export default function BlogPage() {
                   className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 block">
                   <div className="h-44 overflow-hidden">
                     <img
-                      src={`https://images.unsplash.com/photo-${["1601972599720-36938d4ecd31","1556742049-0cfed4f6a45d","1512941937669-90a1b58e7e9c","1574944985070-8f3ebc6b79d2","1558618666-fcd25c85cd64","1611532736597-de2d4265fba3"][POSTS.slice(1).indexOf(post) % 6]}?w=600&q=80`}
+                      src={BLOG_IMAGES[(POSTS.slice(1).indexOf(post) + 1) % BLOG_IMAGES.length]}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />

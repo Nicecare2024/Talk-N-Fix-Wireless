@@ -5,8 +5,8 @@ import Footer from "@/components/layout/Footer";
 import { LOCATIONS } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Store Locations â€” 5 Stores in Newark & Passaic NJ",
-  description: "Find your nearest Talk N Fix Wireless location. 5 stores across Newark and Passaic NJ. Walk-ins welcome, no appointment needed.",
+  title: "Phone Repair Locations — Newark & Passaic NJ | Talk N Fix Wireless",
+  description: "4 Talk N Fix Wireless locations in Newark & Passaic NJ. 354 Passaic St, 315 Monroe St, 207 Ferry St Newark, 674 Mt. Prospect Ave. Walk-ins welcome, open 7 days.",
 };
 
 const REVIEWS = [

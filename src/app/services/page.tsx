@@ -103,8 +103,8 @@ export default function ServicesPage() {
             <div className="relative">
               <div className="aspect-square rounded-[2rem] overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80"
-                  alt="Professional phone repair technician"
+                  src="/secondpic.png"
+                  alt="Talk N Fix Wireless repair service"
                   className="w-full h-full object-cover"
                 />
               </div>

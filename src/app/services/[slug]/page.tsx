@@ -68,7 +68,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <div className="relative">
               <div className="aspect-square rounded-[2rem] overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1601972599720-36938d4ecd31?w=800&q=80"
+                  src="/secondpic.png"
                   alt="Device repair service"
                   className="w-full h-full object-cover"
                 />

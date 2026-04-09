@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "About Us â€” Our Story",
-  description: "Learn about Talk N Fix Wireless, founded in 2014 by Rey. From a single store to 4 Locations across Newark & Passaic NJ, repairing 1,000+ devices monthly.",
+  description: "Talk N Fix Wireless was founded in 2014 by Rey in Newark NJ. From one store to 4 locations across Newark and Passaic NJ, repairing 1000+ devices monthly with 6500+ Google reviews.",
 };
 
 const STATS = [
@@ -69,8 +69,8 @@ export default function AboutPage() {
             <div className="relative">
               <div className="aspect-square rounded-[2rem] overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
-                  alt="Talk N Fix Wireless store interior"
+                  src="/team.png"
+                  alt="Talk N Fix Wireless team and founder Rey"
                   className="w-full h-full object-cover"
                 />
               </div>

@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {/* Featured image */}
           <div className="w-full h-64 rounded-2xl mb-10 overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80"
+              src="/hero.png"
               alt={post.title}
               className="w-full h-full object-cover"
             />

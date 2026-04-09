@@ -43,18 +43,23 @@ export default function Locations() {
           </div>
 
           <div className="lg:col-span-7 h-64 sm:h-96 lg:h-[560px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl relative">
-            <img
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80"
-              alt="Map of Newark and Passaic NJ locations"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            {/* Google Static Map — Newark & Passaic NJ */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48374.23!2d-74.1241!3d40.8568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f97b3e3b3b3b%3A0x0!2sPassaic%2C%20NJ!5e0!3m2!1sen!2sus!4v1"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: "grayscale(20%)" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Talk N Fix Wireless locations in Newark and Passaic NJ"
             />
-            <div className="absolute inset-0 bg-red-700/5" />
-            <div className="absolute bottom-4 right-4 left-4 sm:left-auto sm:right-6 sm:bottom-6 bg-white/90 backdrop-blur px-4 py-3 rounded-xl shadow-lg border border-zinc-100 sm:max-w-xs">
+            <div className="absolute bottom-4 right-4 left-4 sm:left-auto sm:right-6 sm:bottom-6 bg-white/95 backdrop-blur px-4 py-3 rounded-xl shadow-lg border border-zinc-100 sm:max-w-xs pointer-events-none">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-red-600 text-sm">★★★★★</span>
-                <span className="font-bold text-sm text-zinc-900">4.9 Rating</span>
+                <span className="text-yellow-500 text-sm font-bold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span className="font-bold text-sm text-zinc-900">4.9 Star Rating</span>
               </div>
-              <p className="text-xs text-zinc-500 italic">&ldquo;Best screen repair in Passaic! Done in 20 minutes.&rdquo;</p>
+              <p className="text-xs text-zinc-500 italic">&ldquo;Best screen repair in Passaic! Done in 20 minutes.&rdquo; &mdash; Maria R.</p>
             </div>
           </div>
         </div>

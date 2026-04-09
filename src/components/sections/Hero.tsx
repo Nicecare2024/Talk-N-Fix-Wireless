@@ -92,8 +92,8 @@ export default function Hero() {
           <div className="absolute -top-10 -right-10 w-72 h-72 bg-red-600/5 rounded-full blur-3xl" />
           <div className="relative rounded-3xl overflow-hidden shadow-2xl float-anim">
             <img
-              src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=800&q=80"
-              alt="Phone repair technician fixing a cracked smartphone screen"
+              src="/hero.png"
+              alt="Talk N Fix Wireless — Professional Phone Repair in Newark & Passaic NJ"
               className="w-full h-[420px] object-cover"
             />
             <div className="absolute bottom-5 left-5 right-5 p-4 bg-white/85 backdrop-blur-xl rounded-2xl border border-white/50 shadow-lg">

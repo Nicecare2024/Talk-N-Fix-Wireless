@@ -110,7 +110,7 @@ export default function OfferBanner() {
             {/* Left — image */}
             <div className="relative hidden md:block">
               <img
-                src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600&q=80"
+                src="/hero.png"
                 alt="Phone repair technician"
                 className="w-full h-full object-cover"
                 style={{ minHeight: "400px" }}
@@ -192,7 +192,7 @@ export default function OfferBanner() {
             {/* Left — image with overlay */}
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600&q=80"
+                src="/hero.png"
                 alt="Professional phone repair"
                 className="w-full object-cover"
                 style={{ height: "100%", minHeight: "320px", maxHeight: "520px" }}
