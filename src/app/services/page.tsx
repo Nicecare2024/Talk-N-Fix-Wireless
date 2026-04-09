@@ -5,8 +5,15 @@ import Footer from "@/components/layout/Footer";
 import { SERVICES } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "All Repair Services",
-  description: "Complete device repair services in Newark & Passaic NJ. iPhone, Samsung, iPad, laptop, computer, game console and more. Same-day service, 1-year warranty.",
+  title: "All Repair Services — iPhone, Samsung, iPad, Laptop | Newark & Passaic NJ",
+  description: "Professional device repair services in Newark & Passaic NJ. iPhone screen repair from $79, Samsung repair from $89, battery replacement from $49. Same-day service, 1-year warranty available. Walk-ins welcome.",
+  alternates: { canonical: "https://www.talknfixwireless.com/services" },
+  openGraph: {
+    title: "Phone Repair Services in Newark & Passaic NJ | Talk N Fix Wireless",
+    description: "iPhone, Samsung, iPad, laptop repair. Same-day service. 1-year warranty available. 4 locations in Newark & Passaic NJ.",
+    url: "https://www.talknfixwireless.com/services",
+    images: [{ url: "/secondpic.png", alt: "Phone repair services at Talk N Fix Wireless" }],
+  },
 };
 
 const PRICING: Record<string, string> = {

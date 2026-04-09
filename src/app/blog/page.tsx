@@ -5,7 +5,13 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Phone Repair Tips & Blog | Talk N Fix Wireless Newark NJ",
-  description: "Expert phone repair tips, guides and news from Talk N Fix Wireless serving Newark, Passaic and all of Northern NJ since 2014.",
+  description: "Expert phone repair tips, guides and local news from Talk N Fix Wireless — serving Newark, Passaic, Clifton, Paterson and all of Northern NJ since 2014. iPhone repair guides, Samsung tips, and more.",
+  alternates: { canonical: "https://www.talknfixwireless.com/blog" },
+  openGraph: {
+    title: "Phone Repair Blog | Talk N Fix Wireless Newark & Passaic NJ",
+    description: "Expert repair tips and guides from certified technicians in Newark & Passaic NJ.",
+    url: "https://www.talknfixwireless.com/blog",
+  },
 };
 
 const BLOG_IMAGES = [

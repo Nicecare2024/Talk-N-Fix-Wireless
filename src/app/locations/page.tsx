@@ -6,7 +6,13 @@ import { LOCATIONS } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Phone Repair Locations — Newark & Passaic NJ | Talk N Fix Wireless",
-  description: "4 Talk N Fix Wireless locations in Newark & Passaic NJ. 354 Passaic St, 315 Monroe St, 207 Ferry St Newark, 674 Mt. Prospect Ave. Walk-ins welcome, open 7 days.",
+  description: "4 Talk N Fix Wireless locations in Newark & Passaic NJ. 354 Passaic St (973-778-5900), 315 Monroe St (973-894-3600), 207 Ferry St Newark (973-274-9800), 674 Mt. Prospect Ave Newark (973-250-6191). Walk-ins welcome, open 7 days.",
+  alternates: { canonical: "https://www.talknfixwireless.com/locations" },
+  openGraph: {
+    title: "4 Phone Repair Locations in Newark & Passaic NJ | Talk N Fix Wireless",
+    description: "Find your nearest Talk N Fix Wireless. 4 locations in Newark & Passaic NJ. Walk-ins welcome, no appointment needed.",
+    url: "https://www.talknfixwireless.com/locations",
+  },
 };
 
 const REVIEWS = [

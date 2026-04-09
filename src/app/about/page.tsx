@@ -4,8 +4,15 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "About Us - Our Story | Talk N Fix Wireless",
-  description: "Talk N Fix Wireless was founded in 2014 by Rey in Newark NJ. From one store to 4 locations across Newark and Passaic NJ, repairing 1000+ devices monthly with 6500+ Google reviews.",
+  title: "About Us — Founded 2014 | Talk N Fix Wireless Newark NJ",
+  description: "Talk N Fix Wireless was founded in 2014 by Rey in Newark NJ. From one store to 4 locations across Newark and Passaic NJ, repairing 1,000+ devices monthly with 6,500+ Google reviews. Certified technicians, OEM parts.",
+  alternates: { canonical: "https://www.talknfixwireless.com/about" },
+  openGraph: {
+    title: "About Talk N Fix Wireless — Founded 2014 in Newark NJ",
+    description: "Founded 2014 by Rey. 4 locations in Newark & Passaic NJ. 6,500+ Google reviews. 1,000+ repairs per month.",
+    url: "https://www.talknfixwireless.com/about",
+    images: [{ url: "/team.png", alt: "Talk N Fix Wireless team" }],
+  },
 };
 
 const STATS = [

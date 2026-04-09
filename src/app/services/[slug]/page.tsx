@@ -13,9 +13,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const service = SERVICES.find(s => s.id === slug);
   if (!service) return {};
+  const title = `${service.title} in Newark & Passaic NJ — Same Day`;
+  const desc = `Professional ${service.title.toLowerCase()} in Newark and Passaic NJ. ${service.time} same-day service. 1-year warranty available. Free diagnostic. Walk-ins welcome at 4 locations. Call 973-778-5900.`;
   return {
-    title: `${service.title} in Newark & Passaic NJ`,
-    description: `Professional ${service.title.toLowerCase()} in Newark and Passaic NJ. Same-day service. 1-year warranty. Walk-ins welcome. 4 Locations.`,
+    title,
+    description: desc,
+    alternates: { canonical: `https://www.talknfixwireless.com/services/${slug}` },
+    openGraph: {
+      title,
+      description: desc,
+      url: `https://www.talknfixwireless.com/services/${slug}`,
+      images: [{ url: "/secondpic.png", alt: `${service.title} at Talk N Fix Wireless` }],
+    },
+    keywords: [
+      `${service.title} Newark NJ`,
+      `${service.title} Passaic NJ`,
+      `${service.title} near me`,
+      "phone repair Newark NJ",
+      "Talk N Fix Wireless",
+    ],
   };
 }
 
