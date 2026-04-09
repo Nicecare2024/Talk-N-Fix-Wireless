@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SERVICES, LOCATIONS } from "@/lib/data";
 
 export default function Navbar() {
@@ -9,6 +10,14 @@ export default function Navbar() {
   const [repairsOpen, setRepairsOpen] = useState(false);
   const [locationsOpen, setLocationsOpen] = useState(false);
   const [callOpen, setCallOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => pathname === path || pathname.startsWith(path + "/");
+
+  const navLinkClass = (path: string) =>
+    `font-medium transition-colors text-sm flex items-center gap-1 ${
+      isActive(path) ? "text-red-700 border-b-2 border-red-700 pb-0.5" : "text-zinc-600 hover:text-red-600"
+    }`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -27,7 +36,7 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <div className="relative" onMouseEnter={() => setRepairsOpen(true)} onMouseLeave={() => setRepairsOpen(false)}>
-            <button className="text-red-700 font-bold border-b-2 border-red-700 pb-0.5 text-sm flex items-center gap-1">
+            <button className={`${navLinkClass("/services")} py-6`}>
               Repair Services
               <svg className={`w-3 h-3 transition-transform ${repairsOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
             </button>
@@ -57,7 +66,7 @@ export default function Navbar() {
           </div>
 
           <div className="relative" onMouseEnter={() => setLocationsOpen(true)} onMouseLeave={() => setLocationsOpen(false)}>
-            <button className="text-zinc-600 font-medium hover:text-red-600 transition-colors text-sm flex items-center gap-1">
+            <button className={`${navLinkClass("/locations")} py-6`}>
               Store Locations
               <svg className={`w-3 h-3 transition-transform ${locationsOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
             </button>
@@ -74,8 +83,8 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/about" className="text-zinc-600 font-medium hover:text-red-600 transition-colors text-sm">About Us</Link>
-          <Link href="/blog" className="text-zinc-600 font-medium hover:text-red-600 transition-colors text-sm">Blog</Link>
+          <Link href="/about" className={navLinkClass("/about")}>About Us</Link>
+          <Link href="/blog" className={navLinkClass("/blog")}>Blog</Link>
         </div>
 
         {/* CTA */}

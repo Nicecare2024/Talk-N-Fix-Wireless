@@ -321,19 +321,45 @@ export default function AIChat() {
                     }`}>
                       {m.content}
                     </div>
-                    {/* Connect with Real Agent — only after assistant replies (not welcome) */}
+                    {/* Connect with Real Agent + Feedback — only after assistant replies (not welcome) */}
                     {m.role === "assistant" && i > 0 && (
-                      <a
-                        href="tel:9737785900"
-                        className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-red-700 transition-colors font-medium ml-1 group"
-                      >
-                        <div className="w-4 h-4 rounded-full bg-zinc-100 group-hover:bg-red-50 flex items-center justify-center transition-colors">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5 text-zinc-500 group-hover:text-red-700 transition-colors">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/>
-                          </svg>
+                      <div className="flex items-center justify-between ml-1 mt-1">
+                        <a
+                          href="tel:9737785900"
+                          className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-red-700 transition-colors font-medium group"
+                        >
+                          <div className="w-4 h-4 rounded-full bg-zinc-100 group-hover:bg-red-50 flex items-center justify-center transition-colors">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5 text-zinc-500 group-hover:text-red-700 transition-colors">
+                              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/>
+                            </svg>
+                          </div>
+                          {lang === "en" ? "Connect with a real agent" : "Hablar con un agente"}
+                        </a>
+                        {/* Was this helpful? */}
+                        <div className="flex items-center gap-1">
+                          <span className="text-[10px] text-zinc-400 mr-0.5">{lang === "en" ? "Helpful?" : "Util?"}</span>
+                          <button
+                            onClick={() => {}}
+                            className="w-6 h-6 rounded-full hover:bg-emerald-50 flex items-center justify-center transition-colors group/thumb"
+                            aria-label="Helpful"
+                          >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-zinc-400 group-hover/thumb:text-emerald-600 transition-colors">
+                              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14Z"/>
+                              <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+                            </svg>
+                          </button>
+                          <button
+                            onClick={() => {}}
+                            className="w-6 h-6 rounded-full hover:bg-red-50 flex items-center justify-center transition-colors group/thumb"
+                            aria-label="Not helpful"
+                          >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-zinc-400 group-hover/thumb:text-red-500 transition-colors">
+                              <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10Z"/>
+                              <path d="M17 2h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/>
+                            </svg>
+                          </button>
                         </div>
-                        {lang === "en" ? "Connect with a real agent" : "Hablar con un agente"}
-                      </a>
+                      </div>
                     )}
                   </div>
                 </div>
