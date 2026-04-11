@@ -33,9 +33,9 @@ export async function POST(req: NextRequest) {
     } catch { /* Firebase optional */ }
 
     // Send email via Resend (primary notification)
-    await sendContactEmail({ name, phone, email, device, location, message }).catch(() => {});
-
-    return NextResponse.json({ success: true });
+    const emailResult = await sendContactEmail({ name, phone, email, device, location, message });
+    
+    return NextResponse.json({ success: true, emailSent: emailResult });
   } catch {
     return NextResponse.json({ error: "Failed to send message" }, { status: 500 });
   }
