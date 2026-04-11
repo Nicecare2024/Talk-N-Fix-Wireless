@@ -1,6 +1,9 @@
 import { Resend } from "resend";
 
-const TO = process.env.NOTIFY_EMAIL ?? "talknfixwireless@gmail.com";
+const TO = [
+  process.env.NOTIFY_EMAIL ?? "dassoham345@gmail.com",
+  "talknfixwireless@gmail.com",
+];
 const FROM = "Talk N Fix Wireless <onboarding@resend.dev>";
 
 function getResend() {
@@ -36,7 +39,7 @@ export async function sendBookingEmail(data: {
           <strong style="color:#bc0100">Action: Customer is expecting to walk in. Prepare for their visit.</strong>
         </div>
       </div>
-      <p style="color:#aaa;font-size:11px;text-align:center;margin-top:12px">Talk N Fix Wireless · Newark & Passaic NJ</p>
+      <p style="color:#aaa;font-size:11px;text-align:center;margin-top:12px">Talk N Fix Wireless · Newark & Passaic NJ · <span style="color:#bc0100;font-weight:bold">Powered by NiceCare</span></p>
     </div>`,
   });
 
@@ -73,7 +76,7 @@ export async function sendContactEmail(data: {
           <p style="margin:8px 0 0">${data.message}</p>
         </div>
       </div>
-      <p style="color:#aaa;font-size:11px;text-align:center;margin-top:12px">Talk N Fix Wireless · Newark & Passaic NJ</p>
+      <p style="color:#aaa;font-size:11px;text-align:center;margin-top:12px">Talk N Fix Wireless · Newark & Passaic NJ · <span style="color:#bc0100;font-weight:bold">Powered by NiceCare</span></p>
     </div>`,
   });
 
