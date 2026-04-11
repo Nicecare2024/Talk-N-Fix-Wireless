@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createBooking } from "@/lib/firestore";
+import { sendBookingEmail } from "@/lib/email";
 
 function sanitize(str: unknown, maxLen = 500): string {
   if (typeof str !== "string") return "";
@@ -27,6 +28,10 @@ export async function POST(req: NextRequest) {
     }
 
     const ref = await createBooking({ name, phone, email, device, service, location, issue });
+
+    // Send email notification to talknfixwireless@gmail.com
+    await sendBookingEmail({ name, phone, email, device, service, location, issue }).catch(() => {});
+
     return NextResponse.json({ success: true, id: ref.id });
   } catch {
     return NextResponse.json({ error: "Failed to save booking" }, { status: 500 });

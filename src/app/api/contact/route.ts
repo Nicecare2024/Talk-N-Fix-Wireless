@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createContactMessage } from "@/lib/firestore";
+import { sendContactEmail } from "@/lib/email";
 
 function sanitize(str: unknown, maxLen = 500): string {
   if (typeof str !== "string") return "";
@@ -28,6 +29,19 @@ export async function POST(req: NextRequest) {
     }
 
     const ref = await createContactMessage({ name, phone, email, device, location, message, smsOptIn });
+
+    // Also notify via Netlify Forms (sends email to talknfixwireless@gmail.com)
+    try {
+      await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ "form-name": "contact", name, phone, email: email || "", device: device || "", location: location || "", message }).toString(),
+      });
+    } catch { /* Netlify forms optional */ }
+
+    // Send email notification
+    await sendContactEmail({ name, phone, email, device, location, message }).catch(() => {});
+
     return NextResponse.json({ success: true, id: ref.id });
   } catch {
     return NextResponse.json({ error: "Failed to send message" }, { status: 500 });
