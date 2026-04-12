@@ -53,8 +53,8 @@ function smartFallback(lastMsg: string, lang: string): string {
 
   if (m.includes("iphone") && (m.includes("screen") || m.includes("crack") || m.includes("pantalla") || m.includes("roto"))) {
     return es
-      ? "La reparación de pantalla de iPhone va de $79 a $329 según tu modelo. La mayoría de reparaciones listas en 30-45 minutos. ¡Visítanos cuando quieras, sin cita!"
-      : "iPhone screen repair ranges from $79 to $329 depending on your model. Most repairs done in 30-45 minutes while you wait. Walk in anytime — no appointment needed!";
+      ? "La reparación de pantalla de iPhone va de $79 a $329 según tu modelo. La mayoría de reparaciones listas en 30-45 Minsutos. ¡Visítanos cuando quieras, sin cita!"
+      : "iPhone screen repair ranges from $79 to $329 depending on your model. Most repairs done in 30-45 Minsutes while you wait. Walk in anytime — no appointment needed!";
   }
   if (m.includes("samsung") && (m.includes("screen") || m.includes("crack") || m.includes("pantalla"))) {
     return es
@@ -78,8 +78,8 @@ function smartFallback(lastMsg: string, lang: string): string {
   }
   if (m.includes("how long") || m.includes("wait") || m.includes("cuánto tiempo") || m.includes("espera")) {
     return es
-      ? "¡La mayoría de reparaciones toman 30-45 minutos mientras esperas en la tienda! Las pantallas y baterías generalmente listas en menos de una hora."
-      : "Most repairs take 30-45 minutes while you wait in-store! Screen repairs and battery swaps are usually done in under an hour.";
+      ? "¡La mayoría de reparaciones toman 30-45 Minsutos mientras esperas en la tienda! Las pantallas y baterías generalmente listas en menos de una hora."
+      : "Most repairs take 30-45 Minsutes while you wait in-store! Screen repairs and battery swaps are usually done in under an hour.";
   }
   if (m.includes("warranty") || m.includes("garantía")) {
     return es

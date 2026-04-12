@@ -123,7 +123,7 @@ export default function AppointmentPopup() {
             <div className="flex justify-center gap-4 px-6 py-3 bg-zinc-50 border-b border-zinc-100">
               {[
                 { icon: "M5 13l4 4L19 7", label: es ? "1 Ano Garantia" : "1-Yr Warranty" },
-                { icon: "M12 6v6l4 2M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Z", label: es ? "30-45 Min" : "30-45 Min" },
+                { icon: "M12 6v6l4 2M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Z", label: es ? "30-45 Mins" : "30-45 Mins" },
                 { icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z", label: es ? "Partes OEM" : "OEM Parts" },
               ].map(b => (
                 <div key={b.label} className="flex items-center gap-1.5 text-xs text-zinc-600 font-medium">

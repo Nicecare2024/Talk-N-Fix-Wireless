@@ -453,7 +453,7 @@ export default function BookPage() {
                   {[
                     { icon: "M5 13l4 4L19 7", label: "1-Year Warranty", sub: "On every repair" },
                     { icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z", label: "OEM-Grade Parts", sub: "Premium quality" },
-                    { icon: "M12 6v6l4 2M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Z", label: "30–45 Min Repairs", sub: "While you wait" },
+                    { icon: "M12 6v6l4 2M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Z", label: "30-45 Mins Repairs", sub: "While you wait" },
                   ].map(t => (
                     <div key={t.label} className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-red-700 flex-shrink-0">

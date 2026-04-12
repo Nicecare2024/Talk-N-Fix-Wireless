@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Talk N Fix Wireless",
   },
   description:
-    "Talk N Fix Wireless — professional cell phone repair in Newark & Passaic NJ. iPhone screen repair, Samsung repair, battery replacement. Same-day service in 30–45 min. 1-year warranty available. Walk-ins welcome. 4 locations.",
+    "Talk N Fix Wireless — professional cell phone repair in Newark & Passaic NJ. iPhone screen repair, Samsung repair, battery replacement. Same-day service in 30-45 Mins. 1-year warranty available. Walk-ins welcome. 4 locations.",
   keywords: [
     "phone repair Newark NJ",
     "phone repair Passaic NJ",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Talk N Fix Wireless",
     title: "Talk N Fix Wireless | Same-Day Phone Repair Newark & Passaic NJ",
     description:
-      "Professional phone repair in Newark & Passaic NJ. iPhone, Samsung, iPad repair. Same-day service in 30–45 min. 1-year warranty available. 4 locations. Walk-ins welcome.",
+      "Professional phone repair in Newark & Passaic NJ. iPhone, Samsung, iPad repair. Same-day service in 30-45 Mins. 1-year warranty available. 4 locations. Walk-ins welcome.",
     images: [
       {
         url: "/hero.png",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     site: "@talknfixw",
     creator: "@talknfixw",
     title: "Talk N Fix Wireless | Same-Day Phone Repair Newark & Passaic NJ",
-    description: "Same-day phone repair in Newark & Passaic NJ. 30–45 min. 1-year warranty available. Walk-ins welcome.",
+    description: "Same-day phone repair in Newark & Passaic NJ. 30-45 Mins. 1-year warranty available. Walk-ins welcome.",
     images: ["/hero.png"],
   },
   robots: {

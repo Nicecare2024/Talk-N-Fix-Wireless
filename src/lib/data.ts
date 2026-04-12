@@ -5,7 +5,7 @@ export const BUSINESS = {
   founder: "Rey",
   reviews: "6,500+",
   repairsMonthly: "1,000+",
-  avgRepairTime: "30–45 min",
+  avgRepairTime: "30-45 Mins",
   warranty: "1-Year Warranty Available",
 };
 
@@ -61,7 +61,7 @@ export const SERVICES = [
     id: "iphone-screen-repair",
     title: "iPhone Screen Repair",
     description: "Cracked or shattered display? We restore your iPhone screen to factory perfection using premium OLED/LCD assemblies.",
-    time: "30–45 min",
+    time: "30-45 Mins",
     sameDay: true,
     popular: true,
     device: "iphone",
@@ -70,7 +70,7 @@ export const SERVICES = [
     id: "samsung-screen-repair",
     title: "Samsung Screen Repair",
     description: "Galaxy screen gone dark or cracked? We handle all Samsung models with precision and OEM-grade parts.",
-    time: "30–45 min",
+    time: "30-45 Mins",
     sameDay: true,
     popular: true,
     device: "samsung",
@@ -79,7 +79,7 @@ export const SERVICES = [
     id: "ipad-screen-repair",
     title: "iPad Screen Repair",
     description: "Tablet screen cracked? Crystal-clear display restoration with responsive touch, same day.",
-    time: "30–45 min",
+    time: "30-45 Mins",
     sameDay: true,
     popular: true,
     device: "ipad",
@@ -97,7 +97,7 @@ export const SERVICES = [
     id: "charging-port-repair",
     title: "Charging Port Repair",
     description: "Won't charge? Loose port? We clean, repair or replace charging ports on all devices.",
-    time: "30–45 min",
+    time: "30-45 Mins",
     sameDay: true,
     popular: false,
     device: "all",
@@ -222,7 +222,7 @@ export const FAQS = [
   },
   {
     q: "How long does a repair take?",
-    a: "Most repairs are completed within 30–45 minutes while you wait. Complex repairs like water damage or logic board issues may take longer.",
+    a: "Most repairs are completed within 30-45 Minsutes while you wait. Complex repairs like water damage or logic board issues may take longer.",
   },
   {
     q: "Do you offer a warranty?",
@@ -246,7 +246,7 @@ export const FAQS = [
   },
   {
     q: "Can I wait in-store during the repair?",
-    a: "Yes — most customers wait in-store while their device is repaired. Our average turnaround is 30–45 minutes.",
+    a: "Yes — most customers wait in-store while their device is repaired. Our average turnaround is 30-45 Minsutes.",
   },
 ];
 

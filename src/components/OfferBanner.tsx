@@ -238,7 +238,7 @@ export default function OfferBanner() {
                 </span>
                 <h2 className="text-2xl font-extrabold text-zinc-900 mb-3 leading-tight" style={{ fontFamily: "Plus Jakarta Sans" }}>
                   Phone Screen Repair<br />
-                  <span className="text-red-700">in 30–45 Minutes</span>
+                  <span className="text-red-700">in 30-45 Minsutes</span>
                 </h2>
                 <p className="text-stone-500 text-sm leading-relaxed mb-6">
                   Walk in today at any of our 4 NJ locations. Certified technicians, OEM-grade parts, and a 1-year warranty available on every repair.
@@ -248,7 +248,7 @@ export default function OfferBanner() {
                 <div className="space-y-3 mb-7">
                   {[
                     { icon: "M5 13l4 4L19 7", text: "1-Year Warranty Available on all repairs" },
-                    { icon: "M12 6v6l4 2M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Z", text: "30–45 min screen repairs while you wait" },
+                    { icon: "M12 6v6l4 2M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Z", text: "30-45 Mins screen repairs while you wait" },
                     { icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z", text: "OEM-grade parts, free diagnostic" },
                     { icon: "M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z", text: "4 locations in Newark & Passaic NJ" },
                   ].map(b => (

@@ -58,7 +58,7 @@ export default function Hero() {
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-900 leading-[1.05] mb-5" style={{ fontFamily: "Plus Jakarta Sans" }}>
             Expert Mobile<br />Repairs in{" "}
-            <span className="text-red-700">30–45 Min</span>
+            <span className="text-red-700">30-45 Mins</span>
           </h1>
           <p className="text-base sm:text-lg text-stone-600 max-w-xl mb-8 leading-relaxed">
             Precision engineering meets rapid service. Our certified technicians restore your device to factory perfection while you wait.
