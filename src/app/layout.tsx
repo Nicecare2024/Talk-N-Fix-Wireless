@@ -13,11 +13,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.JPG", sizes: "any" },
+      { url: "/favicon.JPG?v=2", type: "image/jpeg" },
     ],
-    apple: "/favicon.JPG",
-    shortcut: "/favicon.JPG",
+    apple: "/favicon.JPG?v=2",
+    shortcut: "/favicon.JPG?v=2",
   },
   description:
     "Talk N Fix Wireless — professional cell phone repair in Newark & Passaic NJ. iPhone screen repair, Samsung repair, battery replacement. Same-day service in 30-45 Mins. 1-year warranty available. Walk-ins welcome. 4 locations.",
@@ -86,9 +85,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" style={{ colorScheme: "light" }}>
       <head>
-        <link rel="icon" href="/favicon.JPG" type="image/jpeg" />
-        <link rel="shortcut icon" href="/favicon.JPG" type="image/jpeg" />
-        <link rel="apple-touch-icon" href="/favicon.JPG" />
+        <link rel="icon" href="/favicon.JPG?v=2" type="image/jpeg" />
+        <link rel="shortcut icon" href="/favicon.JPG?v=2" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/favicon.JPG?v=2" />
         <meta name="color-scheme" content="light" />
         <meta name="geo.region" content="US-NJ" />
         <meta name="geo.placename" content="Newark, Passaic, New Jersey" />
