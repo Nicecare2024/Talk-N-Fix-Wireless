@@ -225,12 +225,13 @@ export default function AppointmentPopup() {
                 )}
               </button>
 
-              <p className="text-xs text-zinc-400 text-center">
-                {es
-                  ? <button onClick={() => { setShow(false); localStorage.setItem("tnf_popup_dismissed", "1"); }} className="hover:text-zinc-600 transition-colors">Sin pago requerido. Entra directo a tu ubicacion.</button>
-                  : <button onClick={() => { setShow(false); localStorage.setItem("tnf_popup_dismissed", "1"); }} className="hover:text-zinc-600 transition-colors">No payment required. Walk straight in to your location.</button>
-                }
-              </p>
+              <button
+                type="button"
+                onClick={() => { setShow(false); localStorage.setItem("tnf_popup_dismissed", "1"); }}
+                className="text-xs text-zinc-400 text-center w-full hover:text-zinc-600 transition-colors mt-1"
+              >
+                {es ? "Sin pago requerido. Entra directo a tu ubicacion." : "No payment required. Walk straight in to your location."}
+              </button>
             </form>
           </>
         )}

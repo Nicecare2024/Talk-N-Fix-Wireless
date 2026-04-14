@@ -124,16 +124,10 @@ export default function Footer() {
             <div>
               <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Have Questions?</p>
               <p className="text-xs text-zinc-500 mb-2">Our chatbot handles 90% of questions instantly.</p>
-              <button
-                onClick={() => {
-                  const btn = document.querySelector<HTMLElement>('[data-widget-id]');
-                  if (btn) btn.click();
-                }}
-                className="text-xs font-bold text-red-700 hover:text-red-800 transition-colors flex items-center gap-1"
-              >
+              <a href="/contact" className="text-xs font-bold text-red-700 hover:text-red-800 transition-colors flex items-center gap-1">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
                 Chat with us →
-              </button>
+              </a>
             </div>
           </div>
         </div>
