@@ -3,7 +3,7 @@ import Link from "next/link";
 const FEATURES = [
   { title: "OEM Quality Parts", desc: "We only use certified original or high-spec equivalent components for every repair." },
   { title: "Same-Day Service", desc: "90% of screen repairs are completed within 45 minutes while you wait in-store." },
-  { title: "1-Year Warranty", desc: "Every repair is backed by our comprehensive 1-year hardware guarantee." },
+  { title: "1-Year Warranty Available", desc: "Every repair comes with a standard 30-day warranty. 6-month and 1-year warranty options also available." },
   { title: "Data Privacy", desc: "Your personal data stays private and secure throughout every repair." },
   { title: "Free Diagnostic", desc: "We inspect your device and give you an honest quote — no charge, no obligation." },
   { title: "Bilingual Support", desc: "We proudly serve our Spanish-speaking community with bilingual staff." },

@@ -1,6 +1,6 @@
 const STEPS = [
   { num: "1", title: "Book Online", desc: "Select your device and issue. Get an instant preliminary quote and walk in at your convenience." },
-  { num: "2", title: "Drop Off", desc: "Visit any of our 5 NJ locations. Our team will check your device in within 5 minutes." },
+  { num: "2", title: "Drop Off", desc: "Visit any of our 4 NJ locations. Our team will check your device in within 5 minutes." },
   { num: "3", title: "Expert Repair", desc: "Certified technicians perform the repair using OEM-grade parts in our clean workspace." },
   { num: "4", title: "Quality Check", desc: "Every device undergoes a 20-point functionality test before handoff with your new warranty." },
 ];

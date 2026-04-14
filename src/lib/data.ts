@@ -222,15 +222,15 @@ export const FAQS = [
   },
   {
     q: "How long does a repair take?",
-    a: "Most repairs are completed within 30-45 Minsutes while you wait. Complex repairs like water damage or logic board issues may take longer.",
+    a: "Most repairs are completed within 30-45 Minutes while you wait. Complex repairs like water damage or logic board issues may take longer.",
   },
   {
     q: "Do you offer a warranty?",
-    a: "Yes — every repair includes a 1-year warranty against defects. We stand behind our work completely.",
+    a: "Yes — every repair comes with a standard 30-day warranty. We also offer 6-month and 1-year warranty options available for added peace of mind.",
   },
   {
     q: "Do I need an appointment?",
-    a: "No appointment needed. Walk-ins are always welcome at all 5 locations.",
+    a: "No appointment needed. Walk-ins are always welcome at all 4 locations.",
   },
   {
     q: "Is my data safe during repair?",
@@ -246,7 +246,7 @@ export const FAQS = [
   },
   {
     q: "Can I wait in-store during the repair?",
-    a: "Yes — most customers wait in-store while their device is repaired. Our average turnaround is 30-45 Minsutes.",
+    a: "Yes — most customers wait in-store while their device is repaired. Our average turnaround is 30-45 Minutes.",
   },
 ];
 

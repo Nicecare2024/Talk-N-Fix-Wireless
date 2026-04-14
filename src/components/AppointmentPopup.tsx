@@ -10,12 +10,11 @@ export default function AppointmentPopup() {
   const [form, setForm] = useState({ name: "", phone: "", device: "", issue: "", location: "" });
 
   useEffect(() => {
-    // 10s delay, max 2 times per session, resets on page refresh (sessionStorage clears on refresh)
-    const count = parseInt(sessionStorage.getItem("tnf_modal") ?? "0");
-    if (count >= 2) return;
+    // Show only ONCE ever — use localStorage so it persists across sessions
+    const dismissed = localStorage.getItem("tnf_popup_dismissed");
+    if (dismissed) return;
     const timer = setTimeout(() => {
       setShow(true);
-      sessionStorage.setItem("tnf_modal", String(count + 1));
     }, 10000);
     return () => clearTimeout(timer);
   }, []);
@@ -60,7 +59,7 @@ export default function AppointmentPopup() {
 
         {/* Close button */}
         <button
-          onClick={() => setShow(false)}
+          onClick={() => { setShow(false); localStorage.setItem("tnf_popup_dismissed", "1"); }}
           className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-500 hover:bg-zinc-200 transition-colors"
           aria-label="Close"
         >
@@ -122,7 +121,7 @@ export default function AppointmentPopup() {
             {/* Trust badges */}
             <div className="flex justify-center gap-4 px-6 py-3 bg-zinc-50 border-b border-zinc-100">
               {[
-                { icon: "M5 13l4 4L19 7", label: es ? "1 Ano Garantia" : "1-Yr Warranty" },
+                { icon: "M5 13l4 4L19 7", label: es ? "1 Ano Garantia Disponible" : "1-Yr Warranty Available" },
                 { icon: "M12 6v6l4 2M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Z", label: es ? "30-45 Mins" : "30-45 Mins" },
                 { icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z", label: es ? "Partes OEM" : "OEM Parts" },
               ].map(b => (
@@ -228,8 +227,9 @@ export default function AppointmentPopup() {
 
               <p className="text-xs text-zinc-400 text-center">
                 {es
-                  ? "Sin pago requerido. Entra directo a tu ubicacion."
-                  : "No payment required. Walk straight in to your location."}
+                  ? <button onClick={() => { setShow(false); localStorage.setItem("tnf_popup_dismissed", "1"); }} className="hover:text-zinc-600 transition-colors">Sin pago requerido. Entra directo a tu ubicacion.</button>
+                  : <button onClick={() => { setShow(false); localStorage.setItem("tnf_popup_dismissed", "1"); }} className="hover:text-zinc-600 transition-colors">No payment required. Walk straight in to your location.</button>
+                }
               </p>
             </form>
           </>

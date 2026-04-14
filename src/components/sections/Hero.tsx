@@ -54,17 +54,17 @@ export default function Hero() {
         {/* Left */}
         <div className="z-10">
           <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-950 text-xs font-bold tracking-widest mb-5 uppercase">
-            Premium Mobile Care
+            Premium Phone Repair
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-900 leading-[1.05] mb-5" style={{ fontFamily: "Plus Jakarta Sans" }}>
-            Expert Mobile<br />Repairs in{" "}
+            Expert Screen<br />Repair in{" "}
             <span className="text-red-700">30-45 Mins</span>
           </h1>
           <p className="text-base sm:text-lg text-stone-600 max-w-xl mb-8 leading-relaxed">
             Precision engineering meets rapid service. Our certified technicians restore your device to factory perfection while you wait.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mb-8">
-            <Link href="/book" className="bg-primary-gradient text-white font-bold px-6 py-4 rounded-xl text-base shadow-xl hover:brightness-110 transition-all active:scale-95 text-center">
+            <Link href="/pricing" className="bg-primary-gradient text-white font-bold px-6 py-4 rounded-xl text-base shadow-xl hover:brightness-110 transition-all active:scale-95 text-center">
               Get Instant Quote
             </Link>
             <Link href="/locations" className="bg-white text-zinc-900 font-semibold px-6 py-4 rounded-xl text-base border border-red-200/30 flex items-center justify-center gap-2 hover:bg-zinc-50 transition-all">
@@ -82,7 +82,7 @@ export default function Hero() {
             </div>
             <div>
               <div className="flex text-red-600 text-sm">{"★★★★★"}</div>
-              <p className="text-zinc-500 text-xs sm:text-sm">6,500+ repairs completed</p>
+              <p className="text-zinc-500 text-xs sm:text-sm">6,500+ 5-Star Google Reviews</p>
             </div>
           </div>
         </div>

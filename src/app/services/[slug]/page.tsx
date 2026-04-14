@@ -67,7 +67,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <span className="text-red-700">Newark & Passaic NJ</span>
               </h1>
               <div className="flex flex-wrap gap-3 mb-6">
-                {[`${service.time}`, "Same-Day Service", "1-Year Warranty", "Walk-ins Welcome"].map(b => (
+                {[`${service.time}`, "Same-Day Service", "1-Year Warranty Available", "Walk-ins Welcome"].map(b => (
                   <span key={b} className="px-4 py-2 rounded-full bg-white border border-zinc-200 text-sm text-zinc-700 font-medium shadow-sm">{b}</span>
                 ))}
               </div>
@@ -117,7 +117,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <div className="bg-white p-5 sm:p-8 rounded-2xl shadow-sm">
               <h2 className="text-2xl font-extrabold text-zinc-900 mb-6" style={{ fontFamily: "Plus Jakarta Sans" }}>Why Choose Us</h2>
               <ul className="space-y-4">
-                {["Same-day service on most repairs (30–60 minutes)", "Certified technicians with years of experience", "OEM-grade & premium aftermarket parts", "1-year warranty on all repairs", "Free diagnostic — no charge to assess your device", "Data privacy respected throughout every repair"].map(item => (
+                {["Same-day service on most repairs (30–60 minutes)", "Certified technicians with years of experience", "OEM-grade & premium aftermarket parts", "1-Year Warranty Available on all repairs", "Free diagnostic — no charge to assess your device", "Data privacy respected throughout every repair"].map(item => (
                   <li key={item} className="flex items-center gap-3 text-stone-600 text-sm">
                     <span className="w-5 h-5 rounded-full bg-blue-700/10 flex items-center justify-center flex-shrink-0">
                       <svg className="w-3 h-3 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
