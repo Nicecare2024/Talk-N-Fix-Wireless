@@ -10,14 +10,16 @@ export default function AppointmentPopup() {
   const [form, setForm] = useState({ name: "", phone: "", device: "", issue: "", location: "" });
 
   useEffect(() => {
-    // Show only ONCE ever — use localStorage so it persists across sessions
-    const dismissed = localStorage.getItem("tnf_popup_dismissed");
-    if (dismissed) return;
-    const timer = setTimeout(() => {
-      setShow(true);
-    }, 10000);
+    // Once per session only — key set immediately so remounts don't re-trigger
+    if (sessionStorage.getItem("tnf_popup_seen")) return;
+    sessionStorage.setItem("tnf_popup_seen", "1");
+    const timer = setTimeout(() => setShow(true), 8000);
     return () => clearTimeout(timer);
   }, []);
+
+  function dismiss() {
+    setShow(false);
+  }
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -52,14 +54,14 @@ export default function AppointmentPopup() {
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4"
       style={{ backgroundColor: "rgba(0,0,0,0.55)", backdropFilter: "blur(4px)" }}
-      onClick={e => { if (e.target === e.currentTarget) setShow(false); }}
+      onClick={e => { if (e.target === e.currentTarget) dismiss(); }}
     >
       {/* Modal */}
       <div className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
 
         {/* Close button */}
         <button
-          onClick={() => { setShow(false); localStorage.setItem("tnf_popup_dismissed", "1"); }}
+          onClick={() => dismiss()}
           className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-500 hover:bg-zinc-200 transition-colors"
           aria-label="Close"
         >
@@ -92,7 +94,7 @@ export default function AppointmentPopup() {
                 ? "Llega a tu ubicacion y menciona tu nombre. Todo estara listo para ti — sin esperar en fila."
                 : "Walk in to your selected location and mention your name. Everything will be ready — no waiting in line."}
             </p>
-            <button onClick={() => setShow(false)}
+            <button onClick={() => dismiss()}
               className="bg-primary-gradient text-white font-bold px-8 py-3 rounded-xl hover:brightness-110 transition-all text-sm">
               {es ? "Perfecto, gracias!" : "Got it, thanks!"}
             </button>
@@ -227,10 +229,10 @@ export default function AppointmentPopup() {
 
               <button
                 type="button"
-                onClick={() => { setShow(false); localStorage.setItem("tnf_popup_dismissed", "1"); }}
+                onClick={() => dismiss()}
                 className="text-xs text-zinc-400 text-center w-full hover:text-zinc-600 transition-colors mt-1"
               >
-                {es ? "Sin pago requerido. Entra directo a tu ubicacion." : "No payment required. Walk straight in to your location."}
+                {es ? "No gracias, entro despues." : "No thanks, I'll walk in later"}
               </button>
             </form>
           </>

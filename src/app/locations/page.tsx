@@ -147,7 +147,7 @@ export default function LocationsPage() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <a href="https://www.google.com/search?q=Talk+N+Fix+Wireless" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.google.com/maps?q=674+Mt+Prospect+Ave+Newark+NJ+07104" target="_blank" rel="noopener noreferrer"
               className="text-blue-700 font-bold underline underline-offset-4 text-sm hover:text-[#003da9] transition-colors">
               Read all 6,500+ reviews on Google
             </a>
