@@ -65,15 +65,15 @@ export default function Navbar() {
       }`}
       style={{ backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-24 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
 
         {/* ── LOGO ── */}
         <Link href="/" className="flex items-center flex-shrink-0" aria-label="Talk N Fix Wireless">
-          <div className="overflow-hidden flex-shrink-0" style={{ width: "38px", height: "46px" }}>
+          <div className="overflow-hidden rounded-lg" style={{ width: "44px", height: "44px" }}>
             <img
               src="/favicon.JPG"
               alt="Talk N Fix Wireless"
-              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 60%", transform: "scale(2.8)", transformOrigin: "center 60%" }}
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 60%", transform: "scale(1.3)", transformOrigin: "center 60%" }}
             />
           </div>
         </Link>
