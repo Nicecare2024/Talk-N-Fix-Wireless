@@ -1,19 +1,9 @@
-import type { Metadata } from "next";
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { LOCATIONS } from "@/lib/data";
-
-export const metadata: Metadata = {
-  title: "Phone Repair Locations — Newark & Passaic NJ | Talk N Fix Wireless",
-  description: "4 Talk N Fix Wireless locations in Newark & Passaic NJ. 354 Passaic St (973-778-5900), 315 Monroe St (973-894-3600), 207 Ferry St Newark (973-274-9800), 674 Mt. Prospect Ave Newark (973-250-6191). Walk-ins welcome, open 7 days.",
-  alternates: { canonical: "https://www.talknfixwireless.com/locations" },
-  openGraph: {
-    title: "4 Phone Repair Locations in Newark & Passaic NJ | Talk N Fix Wireless",
-    description: "Find your nearest Talk N Fix Wireless. 4 locations in Newark & Passaic NJ. Walk-ins welcome, no appointment needed.",
-    url: "https://www.talknfixwireless.com/locations",
-  },
-};
 
 const REVIEWS = [
   { text: "Thought my iPhone was a total loss after it fell in the pool. Talk N Fix revived it in two days. Truly professional and honest service.", name: "Jessica M.", loc: "Google Local Guide · 2 weeks ago" },
@@ -21,28 +11,47 @@ const REVIEWS = [
   { text: "Great service for my Samsung S22. They had the part in stock. The shop is super clean and the techs are very knowledgeable.", name: "Roberto S.", loc: "Local Business Owner · 3 months ago" },
 ];
 
+// Google Maps embed URLs for each location
+const MAP_EMBEDS: Record<string, string> = {
+  "passaic-354": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.5!2d-74.1241!3d40.8568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f9b0b0b0b0b0%3A0x0!2s354+Passaic+St%2C+Passaic%2C+NJ+07055!5e0!3m2!1sen!2sus!4v1",
+  "passaic-315": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.5!2d-74.1280!3d40.8590!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f9b0b0b0b0b1%3A0x0!2s315+Monroe+St%2C+Passaic%2C+NJ+07055!5e0!3m2!1sen!2sus!4v1",
+  "newark-207": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.5!2d-74.1502!3d40.7282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f4b0b0b0b0b0%3A0x0!2s207+Ferry+St%2C+Newark%2C+NJ+07105!5e0!3m2!1sen!2sus!4v1",
+  "newark-674": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.5!2d-74.1650!3d40.7580!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f5b0b0b0b0b0%3A0x0!2s674+Mt+Prospect+Ave%2C+Newark%2C+NJ+07104!5e0!3m2!1sen!2sus!4v1",
+};
+
 export default function LocationsPage() {
+  const [activeId, setActiveId] = useState(LOCATIONS[0].id);
+  const activeLoc = LOCATIONS.find(l => l.id === activeId)!;
+
   return (
     <>
       <Navbar />
       <main className="pt-20 bg-stone-50">
 
         {/* Hero */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-4 sm:px-6 py-16">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left "” store list */}
+
+            {/* Left — store list */}
             <div className="lg:col-span-5 space-y-6">
               <div>
                 <span className="text-red-700 font-bold tracking-widest text-xs uppercase bg-red-700/5 px-3 py-1 rounded-full">New Jersey Premier Centers</span>
                 <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 mt-3 mb-3" style={{ fontFamily: "Plus Jakarta Sans" }}>
                   Find Your Store
                 </h1>
-                <p className="text-stone-600 text-lg">4 Locations across Newark & Passaic NJ. Walk-ins always welcome "” no appointment needed.</p>
+                <p className="text-stone-600 text-lg">4 Locations across Newark &amp; Passaic NJ. Walk-ins always welcome — no appointment needed.</p>
               </div>
 
               <div className="space-y-3">
                 {LOCATIONS.map(loc => (
-                  <div key={loc.id} id={loc.id} className="p-5 rounded-2xl bg-white border border-zinc-100 hover:border-red-700/30 transition-all cursor-pointer shadow-sm">
+                  <div
+                    key={loc.id}
+                    id={loc.id}
+                    onClick={() => setActiveId(loc.id)}
+                    className={`p-5 rounded-2xl bg-white border-2 transition-all cursor-pointer shadow-sm ${
+                      activeId === loc.id ? "border-red-700 shadow-red-100" : "border-zinc-100 hover:border-red-700/30"
+                    }`}
+                  >
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <span className="text-[10px] font-bold text-red-700 uppercase tracking-wider">{loc.city}</span>
@@ -78,28 +87,45 @@ export default function LocationsPage() {
               </div>
             </div>
 
-            {/* Right "” map */}
-            <div className="lg:col-span-7 h-64 sm:h-96 lg:h-[600px] rounded-3xl overflow-hidden shadow-xl bg-zinc-200 relative">
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-zinc-200 to-zinc-300">
-                <div className="text-center text-stone-500">
-                  <svg className="w-16 h-16 mx-auto mb-3 opacity-20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" strokeWidth={1}/></svg>
-                  <p className="text-sm font-medium opacity-40">Google Maps embed</p>
-                  <p className="text-xs opacity-30 mt-1">Newark & Passaic, NJ</p>
-                </div>
+            {/* Right — interactive map */}
+            <div className="lg:col-span-7 lg:sticky lg:top-24">
+              <div className="rounded-3xl overflow-hidden shadow-xl" style={{ height: "580px" }}>
+                <iframe
+                  key={activeId}
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(activeLoc.address + ", " + activeLoc.cityStateZip)}&output=embed&z=16`}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Map for ${activeLoc.address}`}
+                />
               </div>
-              <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur px-5 py-4 rounded-2xl shadow-lg border border-zinc-1000 max-w-xs">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-red-600 text-sm">★★★★★</span>
-                  <span className="font-bold text-sm text-zinc-900">4.9 Star Rating</span>
+              {/* Info card below map */}
+              <div className="mt-4 bg-white rounded-2xl p-4 shadow-sm border border-zinc-100 flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-bold text-red-700 uppercase tracking-wider">{activeLoc.city}</p>
+                  <p className="font-bold text-zinc-900">{activeLoc.address}, {activeLoc.cityStateZip}</p>
+                  <p className="text-xs text-stone-500 mt-0.5">{activeLoc.hours.weekday} · {activeLoc.hours.weekend}</p>
                 </div>
-                <p className="text-xs text-stone-500 italic">&ldquo;Best screen repair in Passaic! Done in 20 minutes.&rdquo; "” Maria R.</p>
+                <div className="flex gap-2">
+                  <a href={activeLoc.mapsUrl} target="_blank" rel="noopener noreferrer"
+                    className="bg-primary-gradient text-white text-xs font-bold px-4 py-2.5 rounded-xl hover:brightness-110 transition-all">
+                    Get Directions
+                  </a>
+                  <a href={`tel:${activeLoc.phone.replace(/-/g,"")}`}
+                    className="bg-zinc-900 text-white text-xs font-bold px-4 py-2.5 rounded-xl hover:bg-zinc-700 transition-all">
+                    {activeLoc.phone}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Reviews */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-4 sm:px-6 py-12 sm:py-20">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
           <h2 className="text-3xl font-extrabold text-zinc-900 text-center mb-12" style={{ fontFamily: "Plus Jakarta Sans" }}>
             Trusted by the Community
           </h2>
@@ -107,8 +133,8 @@ export default function LocationsPage() {
             {REVIEWS.map((r, i) => (
               <div key={i} className="p-8 bg-zinc-100 rounded-3xl border border-white/40">
                 <div className="flex gap-1 text-yellow-500 mb-4 text-sm">
-                {"★★★★★".split("").map((s,i) => <span key={i}>{s}</span>)}
-              </div>
+                  {"★★★★★".split("").map((s, j) => <span key={j}>{s}</span>)}
+                </div>
                 <p className="text-zinc-700 italic leading-relaxed text-sm mb-6">&ldquo;{r.text}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-zinc-300" />
@@ -130,7 +156,7 @@ export default function LocationsPage() {
 
         {/* CTA */}
         <section className="px-4 sm:px-6 py-10 sm:py-16 bg-zinc-100">
-          <div className="max-w-4xl mx-auto bg-primary-gradient rounded-[2.5rem] p-6 sm:p-6 sm:p-12 text-center relative overflow-hidden">
+          <div className="max-w-4xl mx-auto bg-primary-gradient rounded-[2.5rem] p-6 sm:p-12 text-center relative overflow-hidden">
             <div className="absolute -top-16 -left-16 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
             <h2 className="text-3xl md:text-5xl font-black text-white mb-5 relative z-10" style={{ fontFamily: "Plus Jakarta Sans" }}>Walk In Today</h2>
             <p className="text-white/80 mb-8 relative z-10">No appointment needed. Out in 30 minutes.</p>
@@ -145,4 +171,3 @@ export default function LocationsPage() {
     </>
   );
 }
-
