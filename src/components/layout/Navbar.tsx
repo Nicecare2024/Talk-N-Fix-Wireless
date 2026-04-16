@@ -65,16 +65,41 @@ export default function Navbar() {
       }`}
       style={{ backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-24 flex items-center justify-between">
 
         {/* ── LOGO ── */}
-        <Link href="/" className="flex items-center flex-shrink-0" aria-label="Talk N Fix Wireless">
-          <img
-            src="/Main logo.jpg"
-            alt="Talk N Fix Wireless"
-            className="h-14 w-auto object-contain"
-            style={{ maxWidth: "220px" }}
-          />
+        <Link href="/" className="flex items-center gap-3 flex-shrink-0" aria-label="Talk N Fix Wireless">
+          {/* Phone icon — zoomed from favicon.JPG */}
+          <div className="overflow-hidden flex-shrink-0" style={{ width: "38px", height: "46px" }}>
+            <img
+              src="/favicon.JPG"
+              alt=""
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 60%", transform: "scale(1.2)", transformOrigin: "center 60%" }}
+            />
+          </div>
+          {/* Text matching actual logo */}
+          <div className="flex flex-col leading-none gap-0.5">
+            <span style={{
+              fontFamily: "'Bebas Neue', 'Impact', 'Arial Black', sans-serif",
+              fontSize: "26px",
+              fontWeight: 900,
+              color: "#111111",
+              letterSpacing: "0.08em",
+              lineHeight: 1,
+            }}>
+              TALK N&apos; FIX
+            </span>
+            <span style={{
+              fontFamily: "'Bebas Neue', 'Impact', 'Arial Black', sans-serif",
+              fontSize: "11px",
+              fontWeight: 700,
+              color: "#444444",
+              letterSpacing: "0.4em",
+              lineHeight: 1,
+            }}>
+              WIRELESS
+            </span>
+          </div>
         </Link>
 
         {/* ── DESKTOP NAV (lg+) ── */}
@@ -136,7 +161,7 @@ export default function Navbar() {
 
           <Link href="/about" className={`${linkCls("/about")} px-3 py-2 rounded-lg hover:bg-zinc-50`}>About</Link>
           <Link href="/blog" className={`${linkCls("/blog")} px-3 py-2 rounded-lg hover:bg-zinc-50`}>Blog</Link>
-          <Link href="/pricing" className={`${linkCls("/pricing")} px-3 py-2 rounded-lg hover:bg-zinc-50`}>Pricing</Link>
+          {/* <Link href="/pricing" className={`${linkCls("/pricing")} px-3 py-2 rounded-lg hover:bg-zinc-50`}>Pricing</Link> */}
           <Link href="/contact" className={`${linkCls("/contact")} px-3 py-2 rounded-lg hover:bg-zinc-50`}>Contact</Link>
         </div>
 
@@ -180,7 +205,7 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/pricing" className="bg-primary-gradient text-white font-bold px-5 py-2.5 rounded-xl text-sm shadow-lg hover:brightness-110 transition-all active:scale-95 whitespace-nowrap">
+          <Link href="/book" className="bg-primary-gradient text-white font-bold px-5 py-2.5 rounded-xl text-sm shadow-lg hover:brightness-110 transition-all active:scale-95 whitespace-nowrap">
             Get Quote
           </Link>
         </div>
@@ -239,7 +264,7 @@ export default function Navbar() {
 
           {/* Nav links */}
           <div className="border-t border-zinc-100 pt-4 grid grid-cols-2 gap-1">
-            {[["Locations", "/locations"], ["Services", "/services"], ["Pricing", "/pricing"], ["About Us", "/about"], ["Blog", "/blog"], ["Contact", "/contact"]].map(([label, href]) => (
+            {[["Locations", "/locations"], ["Services", "/services"], ["About Us", "/about"], ["Blog", "/blog"], ["Contact", "/contact"]].map(([label, href]) => (
               <Link key={href} href={href} onClick={() => setMobileOpen(false)}
                 className={`text-sm py-2 px-3 rounded-lg transition-all ${isActive(href) ? "text-red-700 bg-red-50 font-semibold" : "text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900"}`}>
                 {label}

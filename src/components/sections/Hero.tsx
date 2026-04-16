@@ -64,7 +64,7 @@ export default function Hero() {
             Precision engineering meets rapid service. Our certified technicians restore your device to factory perfection while you wait.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mb-8">
-            <Link href="/pricing" className="bg-primary-gradient text-white font-bold px-6 py-4 rounded-xl text-base shadow-xl hover:brightness-110 transition-all active:scale-95 text-center">
+            <Link href="/book" className="bg-primary-gradient text-white font-bold px-6 py-4 rounded-xl text-base shadow-xl hover:brightness-110 transition-all active:scale-95 text-center">
               Get Instant Quote
             </Link>
             <Link href="/locations" className="bg-white text-zinc-900 font-semibold px-6 py-4 rounded-xl text-base border border-red-200/30 flex items-center justify-center gap-2 hover:bg-zinc-50 transition-all">

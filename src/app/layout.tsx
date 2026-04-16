@@ -94,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="ICBM" content="40.8568, -74.1241" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" />
         <SEOSchema />
       </head>
       <body suppressHydrationWarning style={{ backgroundColor: "#f9f9f9", color: "#1a1c1c" }}>
