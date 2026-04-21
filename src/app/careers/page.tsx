@@ -50,10 +50,10 @@ export default function CareersPage() {
               We&apos;re Hiring
             </span>
             <h1 className="text-4xl sm:text-6xl font-extrabold mb-5 leading-tight" style={{ fontFamily: "Plus Jakarta Sans" }}>
-              Join the Talk N&apos; Fix Team
+              Join the Talk N Fix Wireless Team
             </h1>
             <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-              We&apos;re growing fast across Newark &amp; Passaic NJ. If you&apos;re hungry, reliable, and ready to work — we want to hear from you.
+              We&apos;re growing fast across New Jersey. If you&apos;re hungry, reliable, and ready to work — we want to hear from you.
             </p>
           </div>
         </section>
