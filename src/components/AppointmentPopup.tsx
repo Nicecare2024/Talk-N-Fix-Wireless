@@ -10,10 +10,15 @@ export default function AppointmentPopup() {
   const [form, setForm] = useState({ name: "", phone: "", device: "", issue: "", location: "" });
 
   useEffect(() => {
-    // Show only ONCE ever — localStorage persists across sessions
+    // Show only ONCE ever — check before setting
+    if (typeof window === "undefined") return;
     if (localStorage.getItem("tnf_popup_seen")) return;
-    localStorage.setItem("tnf_popup_seen", "1");
-    const timer = setTimeout(() => setShow(true), 8000);
+    const timer = setTimeout(() => {
+      // Double-check again before showing (handles StrictMode double-invoke)
+      if (localStorage.getItem("tnf_popup_seen")) return;
+      localStorage.setItem("tnf_popup_seen", "1");
+      setShow(true);
+    }, 8000);
     return () => clearTimeout(timer);
   }, []);
 
