@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { LOCATIONS } from "@/lib/data";
 
+let hasShownPopup = false;
+
 export default function AppointmentPopup() {
   const [show, setShow] = useState(false);
   const [lang, setLang] = useState<"en" | "es">("en");
@@ -10,15 +12,9 @@ export default function AppointmentPopup() {
   const [form, setForm] = useState({ name: "", phone: "", device: "", issue: "", location: "" });
 
   useEffect(() => {
-    // Show only ONCE ever — check before setting
-    if (typeof window === "undefined") return;
-    if (localStorage.getItem("tnf_popup_seen")) return;
-    const timer = setTimeout(() => {
-      // Double-check again before showing (handles StrictMode double-invoke)
-      if (localStorage.getItem("tnf_popup_seen")) return;
-      localStorage.setItem("tnf_popup_seen", "1");
-      setShow(true);
-    }, 8000);
+    if (hasShownPopup) return;
+    hasShownPopup = true;
+    const timer = setTimeout(() => setShow(true), 8000);
     return () => clearTimeout(timer);
   }, []);
 
