@@ -251,7 +251,7 @@ export default function ServicesPage() {
           <div className="max-w-4xl mx-auto text-center bg-white p-6 sm:p-6 sm:p-12 rounded-[3rem] shadow-card relative overflow-hidden">
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-red-700/5 rounded-full blur-3xl" />
             <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 mb-5" style={{ fontFamily: "Plus Jakarta Sans" }}>Ready to fix your device?</h2>
-            <p className="text-stone-600 text-lg mb-10 max-w-xl mx-auto">Join over 6,500 satisfied customers who trust Talk N Fix for their mobile repair needs.</p>
+            <p className="text-stone-600 text-lg mb-10 max-w-xl mx-auto">Join over 6,500 satisfied customers who trust Talk N Fix Wireless for their mobile repair needs.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/book" className="bg-primary-gradient text-white px-10 py-4 rounded-xl font-bold text-base hover:brightness-110 transition-all">Start My Repair</Link>
               <Link href="/locations" className="bg-zinc-200 text-zinc-900 px-10 py-4 rounded-xl font-bold text-base hover:bg-zinc-200 transition-colors">Find a Store</Link>
