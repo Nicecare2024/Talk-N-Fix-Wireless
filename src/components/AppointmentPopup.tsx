@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { LOCATIONS } from "@/lib/data";
 
 let hasShownPopup = false;
@@ -10,13 +11,15 @@ export default function AppointmentPopup() {
   const [step, setStep] = useState<"form" | "done">("form");
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", device: "", issue: "", location: "" });
+  const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname !== "/") return;
     if (hasShownPopup) return;
     hasShownPopup = true;
     const timer = setTimeout(() => setShow(true), 8000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [pathname]);
 
   function dismiss() {
     setShow(false);

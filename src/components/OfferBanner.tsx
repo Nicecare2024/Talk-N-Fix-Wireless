@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { LOCATIONS } from "@/lib/data";
 
 let hasShown = false;
@@ -11,13 +11,15 @@ export default function OfferBanner() {
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", device: "", location: "" });
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname !== "/") return;
     if (hasShown) return;
     hasShown = true;
     const timer = setTimeout(() => setShow(true), 3000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [pathname]);
 
   function dismiss() {
     setShow(false);
