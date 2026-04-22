@@ -58,9 +58,9 @@ export default function Footer() {
             <p className="text-zinc-500 text-xs sm:text-sm leading-relaxed mb-2">
               Founded in 2014, Talk N Fix Wireless provides professional, same-day phone and device repair from convenient locations in Newark and Passaic, trusted by customers across nearby New Jersey Communities.
             </p>
-            <a href="mailto:talknfixwireless@gmail.com" className="text-zinc-500 hover:text-red-700 text-xs block mb-4 transition-colors">
-              talknfixwireless@gmail.com
-            </a>
+            <p className="text-zinc-500 text-xs block mb-4 italic">
+              Build on speed, quality and trust.
+            </p>
             {/* Social icons */}
             <div className="flex gap-2 sm:gap-3">
               {SOCIALS.map(s => (
