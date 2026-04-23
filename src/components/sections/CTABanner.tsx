@@ -1,4 +1,11 @@
+"use client";
 import Link from "next/link";
+
+function openChatbot() {
+  if (typeof window !== "undefined" && window.leadConnector?.chatWidget) {
+    window.leadConnector.chatWidget.openWidget();
+  }
+}
 
 export default function CTABanner() {
   return (
@@ -15,9 +22,9 @@ export default function CTABanner() {
               Get an instant price estimate for your repair and walk in at your nearest location today.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-5">
-              <Link href="/book" className="bg-white text-red-700 font-bold px-8 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl text-base sm:text-lg shadow-2xl hover:scale-105 transition-transform">
+              <button onClick={openChatbot} className="bg-white text-red-700 font-bold px-8 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl text-base sm:text-lg shadow-2xl hover:scale-105 transition-transform">
                 Get My Instant Quote
-              </Link>
+              </button>
               <Link href="/locations" className="bg-transparent border-2 border-white/40 text-white font-bold px-8 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl text-base sm:text-lg hover:bg-white/10 transition-all">
                 Find a Store Near Me
               </Link>

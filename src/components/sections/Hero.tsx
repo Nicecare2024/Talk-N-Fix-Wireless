@@ -2,6 +2,12 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 
+function openChatbot() {
+  if (typeof window !== "undefined" && window.leadConnector?.chatWidget) {
+    window.leadConnector.chatWidget.openWidget();
+  }
+}
+
 const STATS = [
   { value: 6500, suffix: "+", label: "Google Reviews" },
   { value: 4, suffix: "", label: "Locations" },
@@ -64,9 +70,9 @@ export default function Hero() {
             Precision engineering meets rapid service. Our certified technicians restore your device to factory perfection while you wait.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mb-8">
-            <Link href="/book" className="bg-primary-gradient text-white font-bold px-6 py-4 rounded-xl text-base shadow-xl hover:brightness-110 transition-all active:scale-95 text-center">
+            <button onClick={openChatbot} className="bg-primary-gradient text-white font-bold px-6 py-4 rounded-xl text-base shadow-xl hover:brightness-110 transition-all active:scale-95 text-center">
               Get Instant Quote
-            </Link>
+            </button>
             <Link href="/locations" className="bg-white text-zinc-900 font-semibold px-6 py-4 rounded-xl text-base border border-red-200/30 flex items-center justify-center gap-2 hover:bg-zinc-50 transition-all">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               Find a Store
