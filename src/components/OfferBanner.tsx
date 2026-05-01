@@ -9,7 +9,7 @@ export default function OfferBanner() {
   const [show, setShow] = useState(false);
   const [step, setStep] = useState<"offer" | "form" | "done">("offer");
   const [submitting, setSubmitting] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", device: "", location: "" });
+  const [form, setForm] = useState({ name: "", phone: "", device: "", location: "", date: "", time: "" });
   const router = useRouter();
   const pathname = usePathname();
 
@@ -39,6 +39,8 @@ export default function OfferBanner() {
           phone: form.phone,
           device: form.device,
           location: form.location,
+          date: form.date,
+          time: form.time,
           service: "General Repair",
           issue: form.device,
           status: "pending",
@@ -172,6 +174,25 @@ export default function OfferBanner() {
                       </option>
                     ))}
                   </select>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-1.5">Date</label>
+                    <input type="date" value={form.date}
+                      min={new Date().toISOString().split("T")[0]}
+                      onChange={e => setForm(f => ({ ...f, date: e.target.value }))}
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-3.5 py-3 text-zinc-900 text-sm focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-700/10 transition-all" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-1.5">Time</label>
+                    <select value={form.time} onChange={e => setForm(f => ({ ...f, time: e.target.value }))}
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-3.5 py-3 text-zinc-900 text-sm focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-700/10 transition-all">
+                      <option value="">Select time</option>
+                      {["9:00 AM","10:00 AM","11:00 AM","12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM","6:00 PM"].map(t => (
+                        <option key={t} value={t}>{t}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
                 <button type="submit" disabled={submitting || !form.name || !form.phone}
                   className="w-full bg-primary-gradient text-white font-bold py-4 rounded-xl hover:brightness-110 transition-all shadow-primary disabled:opacity-50 flex items-center justify-center gap-2 text-sm mt-1">

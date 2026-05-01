@@ -10,7 +10,7 @@ export default function AppointmentPopup() {
   const [lang, setLang] = useState<"en" | "es">("en");
   const [step, setStep] = useState<"form" | "done">("form");
   const [submitting, setSubmitting] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", device: "", issue: "", location: "" });
+  const [form, setForm] = useState({ name: "", phone: "", device: "", issue: "", location: "", date: "", time: "" });
   const pathname = usePathname();
 
   useEffect(() => {
@@ -40,6 +40,8 @@ export default function AppointmentPopup() {
           issue: form.issue || "General Repair",
           location: form.location,
           service: form.issue || "General Repair",
+          date: form.date,
+          time: form.time,
           status: "pending",
         }),
       });
@@ -213,6 +215,36 @@ export default function AppointmentPopup() {
                     </option>
                   ))}
                 </select>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-1.5">
+                    {es ? "Fecha" : "Date"}
+                  </label>
+                  <input
+                    type="date"
+                    value={form.date}
+                    min={new Date().toISOString().split("T")[0]}
+                    onChange={e => setForm(f => ({ ...f, date: e.target.value }))}
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-3.5 py-3 text-zinc-900 text-sm focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-700/10 transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-1.5">
+                    {es ? "Hora" : "Time"}
+                  </label>
+                  <select
+                    value={form.time}
+                    onChange={e => setForm(f => ({ ...f, time: e.target.value }))}
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-3.5 py-3 text-zinc-900 text-sm focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-700/10 transition-all"
+                  >
+                    <option value="">{es ? "Hora" : "Time slot"}</option>
+                    {["9:00 AM","10:00 AM","11:00 AM","12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM","6:00 PM"].map(t => (
+                      <option key={t} value={t}>{t}</option>
+                    ))}
+                  </select>
+                </div>
               </div>
 
               <button

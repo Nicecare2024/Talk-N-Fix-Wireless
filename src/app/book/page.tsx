@@ -105,6 +105,8 @@ export default function BookPage() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [issue, setIssue] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [ticket] = useState(generateTicket);
@@ -122,7 +124,7 @@ export default function BookPage() {
       await fetch("/api/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, email, device, service, location, issue }),
+        body: JSON.stringify({ name, phone, email, device, service, location, issue, date, time }),
       });
     } finally {
       setSubmitting(false);
@@ -199,6 +201,8 @@ export default function BookPage() {
                       ["Device", selectedDevice?.label ?? device],
                       ["Service", service],
                       ["Location", location],
+                      ...(date ? [["Date", date]] : []),
+                      ...(time ? [["Time", time]] : []),
                     ].map(([k, v]) => (
                       <div key={k} className="flex justify-between text-sm">
                         <span className="text-stone-400 font-medium">{k}</span>
@@ -351,6 +355,22 @@ export default function BookPage() {
                         <label className="block text-[10px] font-bold text-stone-500 uppercase tracking-widest mb-2">Email (optional)</label>
                         <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com"
                           className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3.5 text-zinc-900 text-sm placeholder-stone-300 focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-700/10 transition-all" />
+                      </div>
+                      <div>
+                        <label className="block text-[10px] font-bold text-stone-500 uppercase tracking-widest mb-2">Preferred Date *</label>
+                        <input type="date" value={date} onChange={e => setDate(e.target.value)}
+                          min={new Date().toISOString().split("T")[0]}
+                          className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3.5 text-zinc-900 text-sm focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-700/10 transition-all" />
+                      </div>
+                      <div>
+                        <label className="block text-[10px] font-bold text-stone-500 uppercase tracking-widest mb-2">Preferred Time *</label>
+                        <select value={time} onChange={e => setTime(e.target.value)}
+                          className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3.5 text-zinc-900 text-sm focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-700/10 transition-all">
+                          <option value="">Select a time slot</option>
+                          {["9:00 AM","10:00 AM","11:00 AM","12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM","6:00 PM"].map(t => (
+                            <option key={t} value={t}>{t}</option>
+                          ))}
+                        </select>
                       </div>
                       <div>
                         <label className="block text-[10px] font-bold text-stone-500 uppercase tracking-widest mb-2">Describe the Issue (optional)</label>
